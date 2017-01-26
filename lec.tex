@@ -90,3 +90,39 @@ It's a Proof by contradiction.
 
 %Another lecture.
 %We now go into more turing machines stuffs.
+Turing machines are in the following form: $q_n, S_{1/0}, S_{1/0}/R/L, q_m$ where $q_n$ is our current state, and you see $S_{1/0}$, perform function $S_{1/0}/R/$ and move to state $q_m$. If there is no operation specified on the current state for a scan, then it halts.
+
+Example with notation:
+\begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+% \tilkzstyle{every state}=[f
+  \node[state,initial]  (n)                     {$n$};
+  \node[state]          (m)    [right of = n]  {$m$};
+
+%    <inital node> edge   node {label} (node_name)
+%   (q)   edge        node {}     ()
+%  \path[->]    %%TODO uncomment when PDFLATEX starts working to compile this lable
+%    (n)  edge                node { $S_{1/0}:(L/R)$ }    (m);  %This is giving me an infinite compile time??
+\end{tikzpicture}\\
+
+ex: (These are the same)
+$$Q_1S_1RQ_1,Q_1S_0S_1Q_2,Q_2S_1LQ_2,Q_2S_0RQ_3,Q_3S_1S_0Q_3,Q_3S_0RQ_4$$
+\begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+% \tilkzstyle{every state}=[f
+  \node[state,initial]  (1)                     {$1$};
+  \node[state]          (2)    [right of = 1]   {$2$};
+  \node[state]          (3)    [right of = 2]   {$3$};
+  \node[state]          (4)    [right of = 3]   {$4$};
+
+%    <inital node> edge   node {label} (node_name)
+%ex:   (q)   edge        node {}     ()
+  \path[->]
+    (1)   edge  [loop above]  node    {1:R}   ()
+    (1)   edge                node    {0:1}   (2)
+    (2)   edge  [loop above]  node    {1:L}   ()
+    (2)   edge                node    {0:R}   (3)
+    (3)   edge  [loop above]  node    {1:0}   ()
+    (3)   edge                node    {0:R}   (4);
+\end{tikzpicture}\\
+
+
+
