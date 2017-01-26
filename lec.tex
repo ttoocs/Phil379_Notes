@@ -86,11 +86,12 @@ The set of functions form the set of positive integers to positive integers is n
 
 The set of total nomadic functions from the set of positive integers, $F^{1}$, is not enumerable.
 
-It's a Proof by contradiction.
+It's a Proof by contradiction. %(I was too lazy to write it down)
 
 %Another lecture.
 %We now go into more turing machines stuffs.
-Turing machines are in the following form: $q_n, S_{1/0}, S_{1/0}/R/L, q_m$ where $q_n$ is our current state, and you see $S_{1/0}$, perform function $S_{1/0}/R/$ and move to state $q_m$. If there is no operation specified on the current state for a scan, then it halts.
+
+Turing machines are in the following form: $q_n, S_{1/0}, S_{1/0}/R/L, q_m$ where $q_n$ is our current state, and you see $S_{1/0}$, perform function $S_{1/0}/R/$ and move to state $q_m$. If there is no operation specified on the current state for a scan, then it halts. (Also Called the Turing Alphabet)
 
 Example with notation:
 \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
@@ -124,5 +125,17 @@ $$Q_1S_1RQ_1,Q_1S_0S_1Q_2,Q_2S_1LQ_2,Q_2S_0RQ_3,Q_3S_1S_0Q_3,Q_3S_0RQ_4$$
     (3)   edge                node    {0:R}   (4);
 \end{tikzpicture}\\
 
+\begin{remark}[Turing Machines]
+\begin{itemize}
+\item Each Turing machine is a finite set of Turing instructions.
+\item Each instruction is a 4 letter word of the Turing Alphabet.
+\item The set of Turing machine is enumerable. (Proof: exercise)
+%The set of 1 instruction turing machines is enumerable. (Map them to a two dimentional grid with X being inital states, Y being the final state, and the elements inbetween being the 8 combinations of operations of the two states. Then weave!
+%For any n the set of n instruction Turing machines is also enumerbable.
+%Use Induction!
+%Then show the union of all this is enumerable.
 
+%It could also be done with the number of states being enumerable.
+\end{itemize}
+\end{remark}
 
