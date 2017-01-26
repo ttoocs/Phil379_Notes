@@ -1,0 +1,89 @@
+%Jan 10, 2017.
+
+\subsection{Misc. Notation}
+
+\begin{itemize}
+\item The set of positive integers $\{ x : x$ is a positive integer $\}$ 
+\item The set of positive integers less than3 $\{ x : x $ is a positive integer and x is less than 3 $\}$. $= \{1,2\}$. 
+%I'm already bored.
+\item The empty set: $\emptyset \tor \Delta$ 
+\item Member of: $A \subseteq B$ iff $\forall X (x \in A \implies x \in B )$ 
+\item Union of A and B: $A \cup B $ iff $\{ x : x \in A \lor x \in B \}$
+\item Intersection of A and B: $A \cap B $ iff $\{ x : x \in A \land x \in B \}$
+\item Difference of A and B: $\{ x : x \in A \land x \not \in B \}$
+\item For any non-empty sets $A,B$:
+Cartesian product: A of B: $A \cross B$: $\{<x,y>: x \in A \land y \in B \}$ (ALL OF THE POSSIBILITIES)
+\item TOTAL FUNCTION: Every element in the domain is valid
+\item PARTIAL FUNCTION: Not every element in the domain is valid.
+%%LEC02:
+\item for any set of sets $A$:
+\begin{itemize}
+\item $\Cup A = \{ x : \exists y ( y \in A \land x \in y ) \}$ 
+\item $\Cap A = \{ x : \forall y (y \in A \to x \in y )\}$ 
+\end{itemize}
+%%OHBOYTHESEAGAIN
+\item Relations: R is 
+\begin{itemize}
+\item reflexive : $\forall x Rxx$
+\item symmetric : $\forall x \forall y (Rxy \implies Ryx)$
+\item transitive : $\forall x \forall y \forall z ((Rxy \land Ryz) \implies Rxz)$
+\item Euclidean : $\forall x \forall y \forall z ((Rxy \land Rxz ) \implies Ryz)$
+\item a equivalence relation : it's symmetric,reflexive,transitive.
+\item a (partial) function : $\exists x$ and there is at most one y: $Rxy$ : denoted $f$
+\item a (total) function: assigns a value to each number of $A$ : denoted $f$
+%\item a inverse function: if $\forall x $...?
+\end{itemize}
+
+\item Domain: The set of a functions arguments. 
+\item Range: The set of its values. (Results) 
+\item $f$ is a function from a set $A$ iff the domain of $f$ is included in $A$ 
+
+\item $f$ is a function to a set $B$ iff its range is included in $B$. 
+%\item $f$ is a total function of a set $A$ iff $f$ assigns a value to each number of $A$.
+
+\item $f^{-1}$ is the inverse of the function $f$ from the set $A$ to the set $B$ iff:if for every member $b \in B$, there is exactly one member of $a \in A$ such that $f(a)=b$, then $f^{-1}(b)=a$, otherwise $f^{-1}(b)$ is undefined.
+
+\item $f$ is onto $B$ iff $B$ is the range of $f$ (Surjective)
+\item $f$ is one-to-one iff $\forall x \forall y (f(x)=f(y)\implies x=y)$ (Injective)
+\item $f$ is a bijection iff $f$ is onto and one-to-one.
+\item $f$ is a correspondence iff $f$ is total, one-to-one and onto.
+\item Sets $A$ and $B$ are equinumerous iff there is a correspondence from $A$ to $B$.% (Isomorphism?-esk)
+%Course plan: Review, Do halting problem, compelteness theorem, misc crap.
+\end{itemize}
+
+
+%Lecture 3
+\begin{proof}[Equinumerous is transitive]
+Prove: if $A$ is equinumerous with $B$ and $B$ is equinumerous wit $C$, then $A$ is equinumerous with $C$.
+Proof: Suppose $A$ is equinumerous to $B$, and $B$ is equinumerous to $C$. Then:
+There is a total,one-to-one function $f$ from $A$ onto $B$, and a total one-to-one function $g$ from $B$ to $C$.
+Prove equinumerous via h=g(f), such that h(n)=g(f(n))
+\begin{itemize}
+\item h is total: Let $a$ be a member of $A$. $h(a) = g(f(a))$. Since f is total there is a member of $b$ of $B$ such that $f(a)=b)$. since $g$ is total, there is a member of $c \in C$ such that $g(b)=c$. Hence, $h$ is total.
+\item $h$ is onto $C$. WLOG Let $c$ be a member of $C$, as $g$ is onto, $\exists b \in B$ such that $g(b)=c$. As $f$ is onto, then $\exists a \in A $ such that $f(a)=b$. Hence, the composition of $h=f(g)$ is onto $C$.
+\item $h$ is one-to-one: Suppose $h$ is not one-to-one. \\
+Then there $\exists a_1,a_2 \in A$ such that $h(a_1)=h(a_2), a_1 \not = a_2$.\\
+Giving $g(f(a_1))=g(f(a_2)), a_1 /not = a_2$\\
+Since $g$ is one-to-one $g(b_1) = g(b_2)$ iff $b_1=b_2$. \\
+So the issue must lie in $f$.  However $f$ is one-to-one $f(a_1) = f(a_2)$ iff $f(a) = f(b)$.
+Which is a contradiction, giving us that $h$ is one-to-one.
+\end{itemize}
+\end{proof}
+
+
+%next lecture:
+
+$A^{n}:$ the $n$th Cartesian product of $A$ with itself.
+
+%%Another lecture of pure joy.
+
+%Remark
+Suppose that the set of real Numbers $r, r \lt r \lt 1$, is enumerable.
+Then $L_r : r_1,r_2,r_3....$ written in a notation of  $0.n_1 n_2 n_3$.($n being natural numbers$)
+
+%Remark
+The set of functions form the set of positive integers to positive integers is not enumerable.
+
+The set of total nomadic functions from the set of positive integers, $F^{1}$, is not enumerable.
+
+It's a Proof by contradiction.
