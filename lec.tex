@@ -30,8 +30,11 @@ Cartesian product: A of B: $A \cross B$: $\{<x,y>: x \in A \land y \in B \}$ (AL
 \item Euclidean : $\forall x \forall y \forall z ((Rxy \land Rxz ) \implies Ryz)$
 \item a equivalence relation : it's symmetric,reflexive,transitive.
 \item a (partial) function : $\exists x$ and there is at most one y: $Rxy$ : denoted $f$
+\item a (partial) function$^{1}$ :  $\exists x , \exists y | Rxy$ : denoted $f$.
 \item a (total) function: assigns a value to each number of $A$ : denoted $f$
 %\item a inverse function: if $\forall x $...?
+\item a (total) function$^{2}$: $\forall x , \exists y | Rxy$: denoted $f$.
+
 \end{itemize}
 
 \item Domain: The set of a functions arguments. 
@@ -84,6 +87,16 @@ Then $L_r : r_1,r_2,r_3....$ written in a notation of  $0.n_1 n_2 n_3$.($n being
 
 %Remark
 The set of functions form the set of positive integers to positive integers is not enumerable.
+\begin{proof}
+Suppose S is enumerable.\\
+Then there is a list $L_s$ of the members of $S$.\\
+$L_s = \{ s_1,s_2,s_3,\cdots \}$\\
+Let $\forall n \in \mathbb{N}, n \in k \iff n \not \in S_n$\\
+$k$ is a set of positive intigers. \\
+so There is a number $j$such that $k=s_j$.
+So $j \in S_j \iff j \not in S_j$ \\
+Hence $S$ is not enumerable. \\
+\end{proof}
 
 The set of total nomadic functions from the set of positive integers, $F^{1}$, is not enumerable.
 
@@ -140,3 +153,42 @@ $$Q_1S_1RQ_1,Q_1S_0S_1Q_2,Q_2S_1LQ_2,Q_2S_0RQ_3,Q_3S_1S_0Q_3,Q_3S_0RQ_4$$
 \end{itemize}
 \end{remark}
 
+%Another lecture begins!
+\begin{definition}[Standard inital configuration]
+A turing machine is in a standard Inital configuration $\iff$ 
+\begin{itemize}
+\item for some positive integer $k$, there are $k$ blocks of $1$'s on the tape. %Either there is just a single block of 1's, or two or three blocks of ones, and so-on
+\item seperated by a blank, %a single blank 
+\item and the rest of the tape is blank. %or empty.
+\item the machine is scanning the left-most $1$ on the tape.
+\item the machine is in it's lowest numbered state.
+\end{itemize}
+ex: $\cdots0010110111000\cdots$ is a $SIC$. (if it's in lowest state)
+ex: $\cdots00010000\cdots$ is a $SIC$.
+\end{definition}
+
+
+\begin{definition}[Standard final configuration]
+A turing machine is in a standard final configuration $\iff$ 
+\begin{itemize}
+\item there is a single block of $k$ $1$'s
+\item and the rest of the tape is blank. 
+\item the machine is scanning the left-most $1$ on the tape.
+\end{itemize}
+ex: $\cdots0010110111000\cdots$ is a $SIC$. (if it's in lowest state)
+ex: $\cdots00010000\cdots$ is a $SIC$.
+\end{definition}
+
+
+\begin{definition}[Computes a one-place function $f^1$]
+A turing $M$ computes a one-place function $f^1$: \\
+if $M$ is started in a $SIC$ with a single block of $k$ $1$'s and
+\begin{itemize}
+\item if $f^1$ is defined for the argument $k$, then $M$ eventually halts in a $SFC$
+\item or if $f^1$ is not defined for the argument $k$, then either $M$ never halts or it halts in a non-standard final configuration.
+\end{itemize}
+\end{definition}
+
+\begin{remark}
+Every turing machine computes exactly one functionof two arguments. %Not really sure the context of this... but eh
+\end{remark}
