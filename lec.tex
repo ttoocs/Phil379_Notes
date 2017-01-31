@@ -47,7 +47,7 @@ Cartesian product: A of B: $A \cross B$: $\{<x,y>: x \in A \land y \in B \}$ (AL
 \item $f^{-1}$ is the inverse of the function $f$ from the set $A$ to the set $B$ iff:if for every member $b \in B$, there is exactly one member of $a \in A$ such that $f(a)=b$, then $f^{-1}(b)=a$, otherwise $f^{-1}(b)$ is undefined.
 
 \item $f$ is onto $B$ iff $B$ is the range of $f$ (Surjective) \\ 
-Alt: (wikipedia) : $\forall y \in Y, \exists x \in X | y=f(x)$
+Alt: (Wikipedia) : $\forall y \in Y, \exists x \in X | y=f(x)$
 \item $f$ is one-to-one iff $\forall x \forall y (f(x)=f(y)\implies x=y)$ (Injective)
 \item $f$ is a bijection iff $f$ is onto and one-to-one.
 \item $f$ is a correspondence iff $f$ is total, one-to-one and onto.
@@ -92,7 +92,7 @@ Suppose S is enumerable.\\
 Then there is a list $L_s$ of the members of $S$.\\
 $L_s = \{ s_1,s_2,s_3,\cdots \}$\\
 Let $\forall n \in \mathbb{N}, n \in k \iff n \not \in S_n$\\
-$k$ is a set of positive intigers. \\
+$k$ is a set of positive integers. \\
 so There is a number $j$such that $k=s_j$.
 So $j \in S_j \iff j \not in S_j$ \\
 Hence $S$ is not enumerable. \\
@@ -155,10 +155,10 @@ $$Q_1S_1RQ_1,Q_1S_0S_1Q_2,Q_2S_1LQ_2,Q_2S_0RQ_3,Q_3S_1S_0Q_3,Q_3S_0RQ_4$$
 
 %Another lecture begins!
 \begin{definition}[Standard inital configuration]
-A turing machine is in a standard Inital configuration $\iff$ 
+A Turing machine is in a standard Initial configuration $\iff$ 
 \begin{itemize}
 \item for some positive integer $k$, there are $k$ blocks of $1$'s on the tape. %Either there is just a single block of 1's, or two or three blocks of ones, and so-on
-\item seperated by a blank, %a single blank 
+\item separated by a blank, %a single blank 
 \item and the rest of the tape is blank. %or empty.
 \item the machine is scanning the left-most $1$ on the tape.
 \item the machine is in it's lowest numbered state.
@@ -169,7 +169,7 @@ ex: $\cdots00010000\cdots$ is a $SIC$.
 
 
 \begin{definition}[Standard final configuration]
-A turing machine is in a standard final configuration $\iff$ 
+A Turing machine is in a standard final configuration $\iff$ 
 \begin{itemize}
 \item there is a single block of $k$ $1$'s
 \item and the rest of the tape is blank. 
@@ -181,7 +181,7 @@ ex: $\cdots00010000\cdots$ is a $SIC$.
 
 
 \begin{definition}[Computes a one-place function $f^1$]
-A turing $M$ computes a one-place function $f^1$: \\
+A Turing $M$ computes a one-place function $f^1$: \\
 if $M$ is started in a $SIC$ with a single block of $k$ $1$'s and
 \begin{itemize}
 \item if $f^1$ is defined for the argument $k$, then $M$ eventually halts in a $SFC$
@@ -190,5 +190,12 @@ if $M$ is started in a $SIC$ with a single block of $k$ $1$'s and
 \end{definition}
 
 \begin{remark}
-Every turing machine computes exactly one functionof two arguments. %Not really sure the context of this... but eh
+Every Turing machine computes exactly one function of two arguments. %This is just because we can say it does, from how we defined it earlyer.
+\end{remark}
+
+\begin{remark}
+For any $n$, each Turing Machine computes exactly one function of $n$ arguments.\\
+The set of one-place Turing computable functions is enumerable \\
+$\vdots$\\
+The set of Turing computable functions is enumerable.
 \end{remark}
