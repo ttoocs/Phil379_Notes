@@ -245,3 +245,32 @@ Giving us: \\
 So $M_k$ will halt, after starting with input $k$, $\iff$ $D$ will nver halt after starting with input $k$.\\
 Then $M_k$ isn't identical with $D$, which is a contradiction! Hence$D$ doesn't exist. So $H$ does not exists. So $h$ is not turing computable.
 \end{proof}
+
+
+%% MORE LECTURE. YAY FEB 9, 2017.
+
+\begin{proof}[Another halting problem..?]
+$L_M: M_1, \cdots$
+$L_F: F_1, \cdots$ \\
+$g(n) = 1,$ if $f_n(n) = 2$ \\
+$g(n) = 2,$ otherwise. \\
+$g \not = f_k \forall k$ \\
+$h(m,n)= 1 $if $M_m$ eventuall halys after starting with input $n$. \\
+$h(m,n)= 2$ if $M_m$ never halts after starting with input $n$. \\
+$s(m) = 1$, if $M_m$ eventually halts after starting with input $m$. \\
+$s(m) = 2$, if $M_m$ never halts after starting with input $m$. \\
+\begin{enumerate}
+\item The halting problem is solvable iff $h$ is computable.
+\item If $h$ is computable, then $s$ is computable.
+\item If $s$ is computable, and $TT$'s is true, then $g$ is computable.
+\item $g$ is not Turing computable.
+\item Turing Thesis is true (Whatever is not Turing Computable is not computable)
+\item The halting problem is not solvable.
+\end{enumerate}
+\begin{proof}[3.]
+Suppose $S$ is computable and $TT$ is true. \\
+Then: There is a Turing machine $S$ tat computes s.\\
+Suppose that we are to calculate $g(n)$, for some $n$. \\
+Start $S$ with input $n$. \\
+\end{proof}
+\end{proof}
