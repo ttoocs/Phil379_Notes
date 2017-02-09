@@ -269,8 +269,25 @@ $s(m) = 2$, if $M_m$ never halts after starting with input $m$. \\
 \end{enumerate}
 \begin{proof}[3.]
 Suppose $S$ is computable and $TT$ is true. \\
-Then: There is a Turing machine $S$ tat computes s.\\
+Then: There is a Turing machine $S*$ that computes s.\\
 Suppose that we are to calculate $g(n)$, for some $n$. \\
-Start $S$ with input $n$. \\
+Start $S*$ with input $n$. \\
+\begin{itemize}
+\item Case 1: S* eventually halts with output 1\\
+We know that $M_n$ will eventually ahlt after it is started with input $n$
+Start $M_n$ with input $n$, when it halts, inspect the tape.
+\begin{itemize}
+\item Case 1.1: Halted in SFC
+$f_n(n) = 2$ 
+$g(n) = 1$
+\item Case 1.2: Halted in non-SFC: $f_n$ is undefined.
+$f_n(n) \not=2$
+$g(n)=2$
+\item Case 2: S* eventually halts with output 2
+We know that $M_n$ will never halt after it is started with input $n$. \\
+So we know that $f_n$ is undefined for the argument $n$. \\
+So we know that $g(n) = 2$ \\
+\end{itemize}
+
 \end{proof}
 \end{proof}
