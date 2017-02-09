@@ -199,3 +199,49 @@ The set of one-place Turing computable functions is enumerable \\
 $\vdots$\\
 The set of Turing computable functions is enumerable.
 \end{remark}
+
+
+%%Note: I missed a class, however I've eard there wasn't anything done last class
+
+
+%Another lecture!
+\begin{definition}[The halting problem]
+The problem of finding an effective method to determine whether a Turing macine will eventually ahlt or not after it is started with some input.
+\end{definition}
+\begin{proof}[The halting problem is unsolvable]
+Ex: $L_M: M_1,\dots$ \\
+$h(m,n) =$ \\ % \left $ &  
+%  $\begin{cases}
+\quad 1 if $M_m$ eventually ahlts after starting with input $n$ \\
+\quad 2 if $M_m$ never halts after starting with input $n$ \\ 
+%$  \end{cases}$
+The halting problem is solvable $iff$ $h$ is computable.
+Show: $h$ is not Turing computable. \\
+Let $C$ be a copying machine. \\
+Let $F$ be $\frac{1}{2}$ flipper.\\
+Suppose $h$ is Turing Computable.\\
+Let $H$ be a Turing machine that computes $h$.\\
+If $h$ is a Turing computable, then $H$ exists.\\
+If $H$ exists, then $D(C-H-F)$ exists. \\
+Let $D = M_k$, for some $k$. $M_k \in L_M$.\\
+\\
+Start $D$ with input $k$.
+The C-part of $D$ will produce a copy of $k$,
+Then the $H-$part will do its job:
+\begin{itemize}
+\item If $M_k$ will eventually halt after starting with input $k$, then $H$ will produce output $1$.
+\item If $M_k$ will never halt after starting with input $k$, then $H$ will produce output $2$.
+\end{itemize}
+Then the $F-$part will do it's job.
+\begin{itemize}
+\item If output from $H$ is 1, $F$ will never halt.
+\item If output from $H$ is 2, $F$ will eventually halt.
+\end{itemize}
+Giving us: \\
+\begin{itemize}
+\item If $M_k$ will eventually halt after starting with input $k$, then $D$ will never halt ater starting with input $k$. \\
+\item If $M_k$ will never halt ater starting with input $k$, then $D$ will eventually halt after starting with input $k$. \\
+\end{itemize}
+So $M_k$ will halt, after starting with input $k$, $\iff$ $D$ will nver halt after starting with input $k$.\\
+Then $M_k$ isn't identical with $D$, which is a contradiction! Hence$D$ doesn't exist. So $H$ does not exists. So $h$ is not turing computable.
+\end{proof}
