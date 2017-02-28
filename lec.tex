@@ -301,29 +301,30 @@ So we know that $g(n) = 2$ \\
 
 %%Two weeks later: Some actual notes.. maybe. idk
 %%Chapt 10 I think.
-\begin{Section}[Sentental logic]
+\begin{section}{Sentental logic}
 Some symbols n things:
 \begin{itemize}
 \item ( 
 \item ) 
 \item ' %No idea what this thing does.
 \item - %Nor this really
-\item And: $\wedge$
-\item Or: $\vee$
+\item And: $\wedge$ (Conjunction)
+\item Or: $\vee$ (Disjunction)
 \item Exists: $\exists$ 
 \item Forall: $\forall$
 \item Variables: $v_1, v_2, v_3, \dots$
 \item Equality: $=$
 \item Predicates: \begin{tabular}[c c c]
- $A^{1}_1$& $A^{1}_2$ & \dots
- \vdots   & \vdots & \ddots
- $A^{n}_1$& $A^{n}_2$ & \dots
+ $A^{1}_1$ & $A^{1}_2$ & \dots \\
+ \vdots    & \vdots & \ddots \\
+ $A^{n}_1$ & $A^{n}_2$ & \dots \\
+\end{tabular}
 \item Constant names: $a_1, \dots$
 \item Functions: \begin{tabular}[c c c]
- $f^{1}_1$& $f^{1}_2$ & \dots
- \vdots   & \vdots & \ddots
- $f^{n}_1$& $f^{n}_2$ & \dots
-\end{tabilar}
+ $f^{1}_1$ & $f^{1}_2$ & \dots \\
+ \vdots    & \vdots & \ddots \\
+ $f^{n}_1$ & $f^{n}_2$ & \dots \\
+\end{tabular}
 \end{itemize}
 
 
@@ -345,3 +346,19 @@ Some symbols n things:
 \item If $F$ is a formula then $\forall vF$ is a formula.
 \item NOTHING ELSE IS A FORMULA.
 \end{itemize}
+
+\begin{definition}[Bound]
+An occurence of a variable $v$ in a formula $F$ is bound if it is in a part $G$ of $F$ where
+G = $\exsits v _______$ or $G = \forall v _____________.$
+\end{definition}
+
+\begin{definition}[Model]
+A model $M$ (interpretation) of a language $L$ is $\{|M| v\}$ Where $|M|$ is a non-empty set and $v$ is a valuation function that assigns values (extensions/denotations) to the mebers of $L$ in such a way that \begin{itemize}
+\item $\forall v(a) \in |M|$
+\item $v(A^n) \subseteq$ the $n$th caresian product of $|M|$ with itself: $|M|\cross \dots |M|$.
+\item $v(f^n)$ is a total function from $|M| \cross \dots |M|$ to $|M|$.
+\end{itemize}
+
+\begin{definition}[Truth]
+$M \vDash F^n (t_1,\dots,t_n)$ iff $<M(t_1),\dots,M(t_n)> \in M(F^n)$.
+\end{definition}
