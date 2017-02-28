@@ -297,3 +297,51 @@ So we know that $g(n) = 2$ \\
 
 \end{proof}
 \end{proof}
+
+
+%%Two weeks later: Some actual notes.. maybe. idk
+%%Chapt 10 I think.
+\begin{Section}[Sentental logic]
+Some symbols n things:
+\begin{itemize}
+\item ( 
+\item ) 
+\item ' %No idea what this thing does.
+\item - %Nor this really
+\item And: $\wedge$
+\item Or: $\vee$
+\item Exists: $\exists$ 
+\item Forall: $\forall$
+\item Variables: $v_1, v_2, v_3, \dots$
+\item Equality: $=$
+\item Predicates: \begin{tabular}[c c c]
+ $A^{1}_1$& $A^{1}_2$ & \dots
+ \vdots   & \vdots & \ddots
+ $A^{n}_1$& $A^{n}_2$ & \dots
+\item Constant names: $a_1, \dots$
+\item Functions: \begin{tabular}[c c c]
+ $f^{1}_1$& $f^{1}_2$ & \dots
+ \vdots   & \vdots & \ddots
+ $f^{n}_1$& $f^{n}_2$ & \dots
+\end{tabilar}
+\end{itemize}
+
+
+\begin{definition}[Term]
+\begin{itemize}
+\item Every variable is a term.
+\item Every constant is a term. (or name)
+\item If $t_1,\dots,t_n$ are terms, then $f^n(t_1,\dots,t_n)$ is a term.  
+\item Nothing else is a term.
+\end{itemize}
+
+\begin{definition}[Formula]
+\begin{itemize}
+\item $A^n(t_1,\dots,t_n)$ is a formula where $A^n$ is an $n-$place predcate and $t_i$ are terms.
+\item If $F$ is a formula then $_F$ is a formula
+\item If $F$ and $G$ are fomulas then $(F\wedge G)$ is a formula.
+\item If $F$ and $G$ are fomulas then $F(\vee G)$ is a formula.
+\item If $F$ is a formula, then $\exists vF$ is a formula.
+\item If $F$ is a formula then $\forall vF$ is a formula.
+\item NOTHING ELSE IS A FORMULA.
+\end{itemize}
