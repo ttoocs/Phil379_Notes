@@ -370,6 +370,7 @@ A model $M$ (interpretation) of a language $L$ is $\{|M| v\}$ Where $|M|$ is a n
 \item $M \vDash -S iff M \not = S$.
 \item $M \vDash (K \wedge L ) iff M \vDash K and M \vDash L$
 \item $M \vDash \forall x F$
+\item $M \vDash \exists x F(c) iff $ there is an object $o \in |M| $ and given a name $c$ (that is not interpreted by $M$), $M: \vDash F(c)$
 \end{itemize}
 \end{definition}
 
@@ -382,3 +383,41 @@ $M(f^n(t_1,\dots,t_n)$
 $M(f^n)(M(t_1),\dots,M(t_n)).$
 \end{definition}
 
+Validy = Satisfiability = Implication.\\
+
+Misc-crap:
+\begin{itemize}
+\item $A \vDash B$ is $-(A \wedge -B)$
+\end{itemize}
+
+\begin{lemma}
+Extensionality Lemma\\
+\begin{itemize}
+\item Let $M$ be a model of a language $L$.
+\item Let $S$ be a sentence of $L$.
+\item Let $L^+$ be an extension of $L$. $L \subseteq L^+$
+\item Let $M^+$ be a model of $L^+$
+\item So: $M^+$ is an extension of $M$.
+\item $M \vDash S$ iff $ M^+ \vDash S$
+\end{itemize}
+\end{lemma}
+Example:
+
+If $A \vDash B$ and $B \vDash C$, then $A \vdash C$.
+Suppose $A \vDash B$, and $B \vDash C$.\\
+In every interpretation of $A$ and $B$ in which $A$ is true, $B$ is true,
+In everry interpretation of $B$ and $C$ in which $B$ is true, $C$ is true.
+Shows: In every interpretation of $A$ and $C$ in which $A$ is true, $C$ is true.
+
+Let $M$ be an interpretation of $A$ and $C$ such that $M \vDash A$.
+\begin{itemize}
+\item Case 1:
+$M$ is an interpretation of $B$. \\
+Then $M \vDash B$ \\
+So $M \vDash C$. \\
+\item $M$ is not an interpretation of $B$. \\
+Then there is an extension $M^+$ that interprets $B$ as well as $A$ and $C$. \\
+so: $M^+ \vDash B$ \\
+So: $M^+ \vDash C$ \\
+So $M \vdash C$ (By the ext, llemma) \\
+\end{itemize}
