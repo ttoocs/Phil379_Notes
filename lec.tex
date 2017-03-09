@@ -422,5 +422,90 @@ So: $M^+ \vDash C$ \\
 So $M \vdash C$ (By the ext, llemma) \\
 \end{itemize}
 
+
+%Stuff I kinda missed.
+\begin{lemma}[Undecibality]
 If the decision problem (for implication) is solvable, then the halting problem is solvable.
-There is an effective methoid for specifiing for any Turing machine $M$ and any input $N$ a finite set of setences $\delta$ and a sentence $H$ such that $/delta \vDash H$ iff $M$ eventually halts after starting with input $n$.
+There is an effective methoid for specifiing for any Turing machine $M$ and any input $N$ a finite set of setences $\Delta$ and a sentence $H$ such that $\Delta \vDash H$ iff $M$ eventually halts after starting with input $n$. \\
+$\Delta \vDash H$ iff $M$ eventualy alts after start with input n.\\
+
+
+%\begin{proof}
+Define the one place predicate $Q_ij$ as: At time $j, M$ is in state $i$.
+Define the two place preidcate $@js$ as At time $j, M$, is scanning square $s$.
+Define the two place predicate $Mjs$ as: At time $j,$ square $s$ is marked with a $1$.
+
+A description $D$ for a start state could then be:
+$D: [Q_10 \wedge @_{0,0} \wedge M_{0,0} \wedge M_{0,1} \wedge M_{0,2} \wedge \forall y((y \not = 0 \wedge y \not = 1 \wedge y \not = 2 ) \implies - M_{0,y}]$
+Time = 0, $[ \dots 0 1 1 1 0 \dots ]$
+Square \#, $[\dots -1 0 1 2 3 \dots ]$
+
+%\end{proof}
+\end{lemma}
+
+%Some examples n stuff here.
+For each instructon of a $TM$, we may write the instruction as a setence: \\
+$Q_{i1}S_1RQ_{i2}$ : 
+Move right seeing 1 in state: \\
+%Note: these are fome someone elses notes, and syntax may be wrong.
+$\forall x \forall t ((Q_{i,1} \wedge @_{t,x} \wedge M_{t,x}) \implies (Q_{i2,(t+1)} \wedge @_{(t+1),(x+1)} \wedge \forall y((M_{t,y} \implies M_{(t+1),y}) \wedge (- M_{t,y} \implies - M_{(t+1),y}))$
+
+
+%New lecture:
+Misc-crap that's on the board for some reason: \\
+%Seems like shorthand for definitions... and something about Delta.
+\begin{align*}
+ & \Delta \\
+\mathbb{Q}^1_2  &:& \forall x \forall y \forall z ((Sxy \wedge Sxz) \implies y = z)       & \text{}\\
+@^2            &:& \forall x \forall y \forall z ((Sxz \wedge Syz) \implies x = y )       & \text{}\\
+M^2             &:& \forall x \forall y ( Sxy \implies x < y )                            & \text{}\\
+0               &:& \forall x \forall y \forall z ((x < y \wedge y < z ) \implies x < z ) & \text{}\\
+S^2             &:& - \exists x , x < x                                                   & \text{+1}\\
+<^2             &:& & \text{lessthan}
+\end{align*}
+
+Some thingelse now too:\\
+%Node 1 : 1:R -> node 2
+$\forall x \forall t ((Q_1 t \wedge @tx \wedge Mtx ) \implies \exists u ( s_1 (t , u) \wedge Q_2(u) \wedge @ (u,v)) \wedge \forall y ((M(t,y) \implies M(u,y)) \wedge (-M(t,y) \implies - M(u,y)))))$ \\
+$\exists x \exists t ( Q_mt \wedge @tx \wedge Mtx)$\\
+
+
+\begin{proof}
+Something about biconditonal:\\
+$\Delta \vDash H$ iff $M$ halts after starting with input n.
+\begin{enumerate}
+\item if $\Delta \vDash H$, then $M$ halts.
+\item if $M$ halts, then $\Delta \vDash H$.
+\end{enumerate}
+\begin{enumerate}
+\item if $\Delta \vDash H$, then $M$ halts - Proof. \\
+Suppuse $\Delta \vDash H$ \\
+All members of $\Delta$ are true in the standard interpretation I.
+$H$ is true in $I$.
+So: $M$ halts.
+\item if $M$ halts, then $\Delta \vDash H$ - Proof. \\
+Suppose $M$ halts. (Show $\Delta \vDash H$). \\
+There is a time \underline{$t$} $M$ halts at t. \\
+There is a state $q_i, M$ halts at $t$ in state $q_i$. \\
+There is a square $x$, $M$ halts at $t$ in state $q_i$, scanning square $x$ which is Marked / $-$ Makred \\
+1: $Q_i(t) \wedge @(t,x) \wedge M(t,x)$. \\
+%These ones are names
+1 is a cojunct of the description of time t, $\mathbb{D}(t)$ \\
+$\mathbb{D}(t) \vDash (i)$ \\
+%consider now..
+
+2: $\exists x \exists t (Q_1(t) \wedge @ (t,x) \wedge (t,x))$. \\
+%These ones are variables.
+
+$(i) \vDash (ii)$. \\
+$(ii)$ is disjunct of $H$. \\
+$(ii) \vDash H.$ \\
+So: $\mathbb{D}(t) \vDash H$. \\
+
+%D: the discription at time $t.
+
+$\Delta$ implies a description of everytime before which $M$ did not halt. \\
+$\forall n$( if $M$ has not halted before time n, then $\Delta \vDash \mathbb{D}(n)$ \\
+
+\end{enumerate}
+\end{proof}
