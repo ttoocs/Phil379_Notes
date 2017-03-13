@@ -361,6 +361,24 @@ Ex: $Fx \rightarrow \forall x F x$ : The first x is free, and the second is boun
 Ex: $x < y \wedge - \exists z ( x < z \wedge z < y )$: all occurrences of $x$ and $y$ are free, and all the occurrences of $z$ are bound.
 \end{definition}
 
+%Again, from the textbook:
+\begin{remark}
+When we write something like "Let $F(x)$ be a formula", we are to be understood as meaning "Let $F$ be a formula in which no variables occur free except $x$".
+\end{remark}
+
+%Still from the textbook:
+\begin{definition}[Instance]
+An $instance$ of a formula $F(x)$ is any formula of the form $F(t)$ for $t$ a closed term. Simmilar notations apply where there is more than one free variale, and to terms as well as formulas.
+\end{definition}
+
+%More textbook:
+\begin{definition}[Sentence]
+a formula is a sentence if no occurrence of any variable in it is free.
+\end{definition}
+
+%End: chapt-9.
+
+%Chapt 10:
 \begin{definition}[Model]
 A model $M$ (interpretation) of a language $L$ is $\{|M| v\}$ Where $|M|$ is a non-empty set and $v$ is a valuation function that assigns values (extensions/denotations) to the mebers of $L$ in such a way that 
 \begin{itemize}
