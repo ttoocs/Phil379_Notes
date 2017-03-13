@@ -391,11 +391,26 @@ A model $M$ (interpretation) of a language $L$ is $\{|M| v\}$ Where $|M|$ is a n
 
 \begin{definition}[Truth]
 \begin{itemize}
-\item $M \vDash F^n (t_1,\dots,t_n)$ iff $<M(t_1),\dots,M(t_n)> \in M(F^n)$.
-\item $M \vDash -S iff M \not = S$.
-\item $M \vDash (K \wedge L ) iff M \vDash K and M \vDash L$
-\item $M \vDash \forall x F$
-\item $M \vDash \exists x F(c) iff $ there is an object $o \in |M| $ and given a name $c$ (that is not interpreted by $M$), $M: \vDash F(c)$
+\item For some predicate $R$: $M \vDash R(t_1,\dots,t_n)$ iff $R^M(t_1^M,\dots,t_n^M)$ \\
+\item For Identity function (when present): $M \vDash =(t_1,t_2)$ iff $t_1^M = t_2^M$.
+\item $M \vDash F^n (t_1,\dots,t_n)$ iff $<M(t_1),\dots,M(t_n)> \in M(F^n)$. \\
+Textbook writes this as: $(f(t_1, \dots t_n))^M = f^M (t_1^M , \dots, t_n^M)$.
+Ie: Interpretation $M$, makes true $f^n(t_1,\dots,t_n)$ (An n-place function), iff $\{t_1^M , \dots, t_n^M\} \in M(F^n)$ %Is this correct? ben agrees 
+%\item $M \vDash -S iff M \not = S$. %Notes
+\item $M \vDash -S $ iff $M \not \vDash S$ %Textbook
+%Textbook denotes K/L as F/G$.
+\item $M \vDash (K \wedge L )$ iff $M \vDash K$ and $M \vDash L$ 
+\item $M \vDash (K \vee L )$ iff $M \vDash K$ or $M \vDash L$ %From textbook
+% Notes:
+%\item $M \vDash \forall x F$
+%\item $M \vDash \exists x F(c) iff $ there is an object $o \in |M| $ and given a name $c$ (that is not interpreted by $M$), $M: \vDash F(c)$
+% Textbook: 
+\item $M \vDash F[m]$ iff $M^c_m \vDash F(c)$ \\
+'If we considered the extended language $L \cup \{c\}$ obtained by adding a new constant $c$ in to our given language $L$, and if among all the extentions of our given interpretation of this extended language we considered the one $M^c_m$ that assigns $c$ the denotation $m$, then $F(c)$ would be true.'
+
+\item $M \vDash \forall x F (x) $ iff for every m in the domain , $M \vDash F(m)$
+\item $M \vDash \exists x F (x) $ iff for some m in the domain , $M \vDash m)$
+
 \end{itemize}
 \end{definition}
 
