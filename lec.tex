@@ -546,52 +546,103 @@ So: $\mathbb{D}(t) \vDash H$. \\
 
 $\Delta$ implies a description of everytime before which $M$ did not halt. \\
 $\forall n$( if $M$ has not halted before time n, then $\Delta \vDash \mathbb{D}(n)$ \\
-
 \end{enumerate}
 \end{proof}
 
 
-\large{First-Order Logic Revamp:}
+%ANOTHER LECTURE Tue Mar 14.
+Relisting it: 
+\begin{proof}[The decision problem for implication, is unsovable if turings thesis is true.]
+$\Delta \vDash H$ iff $M$ eventually halts. \\
+Only if: $\Delta \vDash H$ only if $M$ eventually halts. \\
+if: if $M$ eventually halts then $\Delta \vDash H$. \\
+Suppose: $M$ halts at $t$\\
+$\mathbb{D}(t) \vDash(H)$ \\ %Proved earlyer?
+Show: $\Delta \vDash \mathbb{D}(t)$
+
+Something inductive:
+Base step: if $M$ has not halted before time 0, then $\Delta \vDash \mathbb{D}(0)$:
+Inductive step: $\forall n ($ if $M$ has not halted before time $n$, then $\Delta \vDash \mathbb{D}(n)$ only if if$M$ has not halted before time $n+!$, then $\Delta \vDash \mathbb{D}(n+1))$
+% Induction layout:
+% F_0
+% \forall n (F_n \implies F_{n+1}
+% \forall n F_n
+Conclusion: $\forall n$ (if $M$  has not halted before time $n$, then $\Delta \vDash \mathbb{D}(n)$.
+
+Proving the Inductive step: \\
+\begin{itemize}
+\item Suppose if $M$ has not halted before time $n$, then $\Delta \vDash \mathbb{D}(n)$.
+\item (Show : if $M$ has not halted before time $n+!$, then $\Delta \vDash \mathbb{D}(n+1)$)
+\item Suppose: $M$ has not halted before time $n+1$
+\item So: $M$ has not halte dbefore time $n$
+\item So: $\Delta \vDash \mathbb{D}(n)$.
+\item (Show: $\Delta \cup \{\mathbb{D}(n)\} \vDash \mathbb{D}(n+1))$
+\item $\mathbb{D}(n): Q_jn \wedge @_{n,k} \wedge M_{n,k} \dots$
+\item $\forall t \forall x ((Q_j(t) \wedge @tx, \wedge Mtx) \implies Q_it+1 \wedge @(t+1)(x+1) \wedge \dots)$
+\item $(Q_jn \wedge @nk \wedge Mnk) \implies Q_i(n+1) \wedge @(n+1)(k+1) \wedge \dots)$
+\item $\mathbb{D}(n+1): Q_i(n+1) \wedge @(n+1)(j+1)\wedge \dots$
+%How do you write this out? HAha, you should kow this already. apprently. idfk wtf he's on about.
+%There are 3 cases: move left, move right, write somthing. And that in each case, prove the conclusion thingy.
+\end{itemize}
+
+\end{proof}
+
+Then some random ramblings about logiceans. happend. Here's a book: "What is the name of this book?".\\
+There are methods of validlity, and truth trees, and some other stuff. He's gonna use this. He's gonna prove this has some properties for validity. \\
+
+\section{Truth Trees}
+$\frac{(A \implies B) \\ A}{B}$ \\
+$\{ ( A \implies B) , A , -B \}$ \\
+Tree: \\
+$(A \implies B)$ \\
+$A$ \\
+$-B$ \\
+left subnode: $-A$
+Right node :$B$
+
+
+
+%\large{First-Order Logic Revamp:}
 %From Chapt. 9:
-Some definitions for first-order logic: \\
-\begin{itemize}
-\item Logical Symbols: \\
-\begin{itemize} 
-\item Negation: ~ : 'not'
-\item Conjunction: \&, $\wedge$: 'and'
-\item Disjunction: $\vee$ : 'or'
-\item Conditional: $\rightarrow$ : 'if \dots then \dots'
-\item Biconditional: $\leftrightarrow$ : 'if and only if'
-\item Universal quantification: $\forall x$ : 'for every x'
-\item Existential quantification: $\exists x$ : 'for some x'
-\item Identity symbol: $=$ : '\dots is (the very same thing as ) \dots'
-\item Variables: x, y, z
-\item Punctuation: '(', ')' , ','
-\end{itemize}
-\item Nonlogical Symbols:
-\begin{itemize}
-\item Constants or Individual symbols (a,b,c .. )
-\item Predicates or Relation symbols : Have a fixed positive number of places
-\item Function symbols: : Have a fixed positive number of places.
-\end{itemize}
-%End-Symbols
-\item Other-Definitions:
-\begin{itemize}
-\item language: an enumerable set of nonlogical symbols. Denoted: $L$ \\
-Empty Language: $L_\varnothing$, The language with no logical symbols.
-\end{itemize} %End-other defintions
-
-\item Closure:
-\begin{itemize}
-\item Closed Function: they make a complete statement capable of being true or false
-\item Closed Term: Has no variables.
-\end{itemize}
-
-\item Interpretation: An interpretation $M$ for a language $L$ consists of two components.
-\begin{itemize}
-\item A nonempty set $|M|$, called the domain or universe of discourse of the set of things $M$.
-\item For each non-logical symbol, a denotation assigned to it. Noted by $x^M$.
-\end{itemize} %End Interpretations
-
-\end{itemize} %end some defs for first-order logic.
-
+%Some definitions for first-order logic: \\
+%\begin{itemize}
+%\item Logical Symbols: \\
+%\begin{itemize} 
+%\item Negation: ~ : 'not'
+%\item Conjunction: \&, $\wedge$: 'and'
+%\item Disjunction: $\vee$ : 'or'
+%\item Conditional: $\rightarrow$ : 'if \dots then \dots'
+%\item Biconditional: $\leftrightarrow$ : 'if and only if'
+%\item Universal quantification: $\forall x$ : 'for every x'
+%\item Existential quantification: $\exists x$ : 'for some x'
+%\item Identity symbol: $=$ : '\dots is (the very same thing as ) \dots'
+%\item Variables: x, y, z
+%\item Punctuation: '(', ')' , ','
+%\end{itemize}
+%\item Nonlogical Symbols:
+%\begin{itemize}
+%\item Constants or Individual symbols (a,b,c .. )
+%\item Predicates or Relation symbols : Have a fixed positive number of places
+%\item Function symbols: : Have a fixed positive number of places.
+%\end{itemize}
+%%End-Symbols
+%\item Other-Definitions:
+%\begin{itemize}
+%\item language: an enumerable set of nonlogical symbols. Denoted: $L$ \\
+%Empty Language: $L_\varnothing$, The language with no logical symbols.
+%\end{itemize} %End-other defintions
+%
+%\item Closure:
+%\begin{itemize}
+%\item Closed Function: they make a complete statement capable of being true or false
+%\item Closed Term: Has no variables.
+%\end{itemize}
+%
+%\item Interpretation: An interpretation $M$ for a language $L$ consists of two components.
+%\begin{itemize}
+%\item A nonempty set $|M|$, called the domain or universe of discourse of the set of things $M$.
+%\item For each non-logical symbol, a denotation assigned to it. Noted by $x^M$.
+%\end{itemize} %End Interpretations
+%
+%\end{itemize} %end some defs for first-order logic.
+%
