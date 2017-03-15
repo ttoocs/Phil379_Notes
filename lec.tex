@@ -593,7 +593,7 @@ There are methods of validlity, and truth trees, and some other stuff. He's gonn
 \section{Truth Trees}
 Ex:
 $\frac{(A \implies B) \\ A}{B}$ 
-\hspace*{2cm} IS
+\hspace*{2cm} is
 %Tree: \\
 %$(A \implies B)$ \\
 %$A$ \\
@@ -606,12 +606,98 @@ $\frac{(A \implies B) \\ A}{B}$
 }
   [A , just=Assummed
     [-B, 
-      [-A, close={!u,!c}]
-      [B, close={!u,!c}]]]]
+      [-A, close]
+      [B, close]]]]
 \end{prooftree}
 
 Giving
 $\{ ( A \implies B) , A , -B \}$ \\
+
+He then did all these,( which seem to be rules):\\
+\begin{prooftree}
+{to prove={\alpha}}
+[\alpha
+  [-\alpha, close]]
+\end{prooftree}
+
+\begin{prooftree}
+{to prove={\alpha \wedge \beta}}
+[(\alpha \wedge \beta), just=Assumed, checked
+  [\alpha
+    [\beta]]]
+\end{prooftree}
+
+\begin{prooftree}
+{to prove={-(\alpha \wedge \beta}}
+[-(\alpha \wedge \beta), checked
+  [-\alpha]
+  [-\beta]]
+\end{prooftree}
+
+\begin{prooftree}
+{to prove={\alpha \vee \beta}}
+[(\alpha \vee \beta), checked
+  [\alpha]
+  [\beta]]
+\end{prooftree}
+
+\begin{prooftree}
+{to prove={-(\alpha \vee \beta)}}
+[-(\alpha \vee \beta), checked
+  [-\alpha]
+  [-\beta]]
+\end{prooftree}
+
+\begin{prooftree}
+{to prove={- \forall x x \varnothing }}
+[- \forall x x \varnothing, checked
+  [\exists x - \varnothing]]
+\end{prooftree}
+
+\begin{prooftree}
+{to prove={- \exists x \varnothing}}
+[- \exists x \varnothing , checked
+  [x - \varnothing , checked]]
+\end{prooftree}
+
+\begin{prooftree}
+{to prove={\exists x \varnothing \lbrack x \rbrack }}
+[\exists x \varnothing \lbrack x \rbrack , checked
+ [\varnothing \lbrack c \rbrack , checked]]
+\end{prooftree}
+Note: $c$ is a new name on the path.
+
+\begin{prooftree}
+{to prove={\forall x \varnothing \lbrack x \rbrack }}
+[\forall x \varnothing \lbrack x \rbrack
+  [ \varnothing \lbrack c \rbrack ]]
+\end{prooftree}
+Note: $c$ is a name already on the path, unless there are no names by the path and in that case, $c$ is new.
+
+\begin{prooftree}
+{to prove={\forall x (F x \rightarrow G x) \wedge \forall x (G x \rightarrow H x)}}
+[\forall x (F x \rightarrow G x)
+  [\forall x (G x \rightarrow H x)
+    [- H a
+      [ - F a]]]]
+\end{prooftree} \\
+Which is INVALID. \\
+
+
+\begin{prooftree}
+{}
+[\forall x (F x \rightarrow G x) , just=assumed
+  [\forall x (G x \rightarrow H x), just=assumed
+    [-H a , just=assumed
+      [- - F a , just=assumed
+        [F a
+          [(Ga \rightarrow Ha)
+            [(Fa \rightarrow Ga)
+              [Ha, close]
+              [-Ga
+                [-Fa , close]
+                [Ga , close]]]]]]]]]
+\end{prooftree}
 %Example LATEX proof-tree:
 %\begin{prooftree}
 %{
