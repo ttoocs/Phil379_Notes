@@ -698,6 +698,55 @@ Which is INVALID. \\
                 [-Fa , close]
                 [Ga , close]]]]]]]]]
 \end{prooftree}
+
+\newpage 
+
+Another same-case example:
+$\frac{\forall x (Fx \rightarrow Gx) \\ \exists x G x }{\exists x F x}$
+\hspace*{2cm} is
+\begin{prooftree}
+{}
+[\forall x (Fx \rightarrow Gx) , just=assumed
+[\exists x G x , just=assumed, checked
+[\_ \exists x F x , just=assumed, checked
+  [\forall x - F x
+  [Ga
+  [-Fa
+  [Fa \rightarrow Ga , checked
+    [-Fa]
+    [Ga]]]]]]]]
+\end{prooftree}
+
+Finding a case of invalidity from a proof tree:
+\begin{enumerate}
+\item take a path
+\item get all values on the path
+\item The domain consists of these values
+%\item you assing valeus to predicates such that backing up the tree is true.
+\item You assign values to the predicates bottom-up, such that the tree's path is true.
+\end{enumerate}
+
+Ex from the above same-case example: We follow the path down to $Ga$.
+Then:
+\begin{enumerate}
+\item $v(a) = 1$ 
+\item $|M| = \{1\}$
+\item $v(F) = \varnothing$ \\
+$v(G) = \{1\}$
+\end{enumerate}
+
+The order of apllying rules:
+\begin{enumerate}
+\item TF
+\item NEGQ
+\item EI
+\item UI
+\item GOTO 1 (Untill nothing is done)
+\end{enumerate}
+
+\begin{remark}
+Sometimes, this never finishes. But that's due to the undecidiblity of things...
+\end{remark}
 %Example LATEX proof-tree:
 %\begin{prooftree}
 %{
