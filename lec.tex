@@ -207,13 +207,13 @@ The set of Turing computable functions is enumerable.
 
 %Another lecture!
 \begin{definition}[The halting problem]
-The problem of finding an effective method to determine whether a Turing macine will eventually ahlt or not after it is started with some input.
+The problem of finding an effective method to determine whether a Turing machine will eventually halt or not after it is started with some input.
 \end{definition}
 \begin{proof}[The halting problem is unsolvable]
 Ex: $L_M: M_1,\dots$ \\
 $h(m,n) =$ \\ % \left $ &  
 %  $\begin{cases}
-\quad 1 if $M_m$ eventually ahlts after starting with input $n$ \\
+\quad 1 if $M_m$ eventually halts after starting with input $n$ \\
 \quad 2 if $M_m$ never halts after starting with input $n$ \\ 
 %$  \end{cases}$
 The halting problem is solvable $iff$ $h$ is computable.
@@ -240,11 +240,11 @@ Then the $F-$part will do it's job.
 \end{itemize}
 Giving us: \\
 \begin{itemize}
-\item If $M_k$ will eventually halt after starting with input $k$, then $D$ will never halt ater starting with input $k$. \\
-\item If $M_k$ will never halt ater starting with input $k$, then $D$ will eventually halt after starting with input $k$. \\
+\item If $M_k$ will eventually halt after starting with input $k$, then $D$ will never halt after starting with input $k$. \\
+\item If $M_k$ will never halt after starting with input $k$, then $D$ will eventually halt after starting with input $k$. \\
 \end{itemize}
-So $M_k$ will halt, after starting with input $k$, $\iff$ $D$ will nver halt after starting with input $k$.\\
-Then $M_k$ isn't identical with $D$, which is a contradiction! Hence$D$ doesn't exist. So $H$ does not exists. So $h$ is not turing computable.
+So $M_k$ will halt, after starting with input $k$, $\iff$ $D$ will never halt after starting with input $k$.\\
+Then $M_k$ isn't identical with $D$, which is a contradiction! Hence$D$ doesn't exist. So $H$ does not exists. So $h$ is not Turing computable.
 \end{proof}
 
 
@@ -256,7 +256,7 @@ $L_F: F_1, \cdots$ \\
 $g(n) = 1,$ if $f_n(n) = 2$ \\
 $g(n) = 2,$ otherwise. \\
 $g \not = f_k \forall k$ \\
-$h(m,n)= 1 $if $M_m$ eventuall halys after starting with input $n$. \\
+$h(m,n)= 1 $if $M_m$ eventually halts after starting with input $n$. \\
 $h(m,n)= 2$ if $M_m$ never halts after starting with input $n$. \\
 $s(m) = 1$, if $M_m$ eventually halts after starting with input $m$. \\
 $s(m) = 2$, if $M_m$ never halts after starting with input $m$. \\
@@ -275,7 +275,7 @@ Suppose that we are to calculate $g(n)$, for some $n$. \\
 Start $S*$ with input $n$. \\
 \begin{itemize}
 \item Case 1: S* eventually halts with output 1\\
-We know that $M_n$ will eventually ahlt after it is started with input $n$
+We know that $M_n$ will eventually halt after it is started with input $n$
 Start $M_n$ with input $n$, when it halts, inspect the tape.
 \begin{itemize}
 \item Case 1.1: Halted in SFC
@@ -339,10 +339,10 @@ Some symbols n things:
 
 \begin{definition}[Formula]
 \begin{itemize}
-\item $A^n(t_1,\dots,t_n)$ is a formula where $A^n$ is an $n-$place predcate and $t_i$ are terms. (This is an atomic formula).
+\item $A^n(t_1,\dots,t_n)$ is a formula where $A^n$ is an $n-$place predicate and $t_i$ are terms. (This is an atomic formula).
 \item If $F$ is a formula then $-F$ is a formula
-\item If $F$ and $G$ are fomulas then $(F\wedge G)$ is a formula.
-\item If $F$ and $G$ are fomulas then $F(\vee G)$ is a formula.
+\item If $F$ and $G$ are formulas then $(F\wedge G)$ is a formula.
+\item If $F$ and $G$ are formulas then $F(\vee G)$ is a formula.
 \item If $F$ is a formula, then $\exists vF$ is a formula.
 \item If $F$ is a formula then $\forall vF$ is a formula.
 \item NOTHING ELSE IS A FORMULA.
@@ -368,7 +368,7 @@ When we write something like "Let $F(x)$ be a formula", we are to be understood 
 
 %Still from the textbook:
 \begin{definition}[Instance]
-An $instance$ of a formula $F(x)$ is any formula of the form $F(t)$ for $t$ a closed term. Simmilar notations apply where there is more than one free variale, and to terms as well as formulas.
+An $instance$ of a formula $F(x)$ is any formula of the form $F(t)$ for $t$ a closed term. Similar notations apply where there is more than one free variable, and to terms as well as formulas.
 \end{definition}
 
 %More textbook:
@@ -380,10 +380,10 @@ a formula is a sentence if no occurrence of any variable in it is free.
 
 %Chapt 10:
 \begin{definition}[Model]
-A model $M$ (interpretation) of a language $L$ is $\{|M| v\}$ Where $|M|$ is a non-empty set and $v$ is a valuation function that assigns values (extensions/denotations) to the mebers of $L$ in such a way that 
+A model $M$ (interpretation) of a language $L$ is $\{|M| v\}$ Where $|M|$ is a non-empty set and $v$ is a valuation function that assigns values (extensions/denotations) to the members of $L$ in such a way that 
 \begin{itemize}
 \item $\forall v(a) \in |M|$
-\item $v(A^n) \subseteq$ the $n$th caresian product of $|M|$ with itself: $|M|\cross \dots |M|$.
+\item $v(A^n) \subseteq$ the $n$th Cartesian product of $|M|$ with itself: $|M|\cross \dots |M|$.
 \item $v(f^n)$ is a total function from $|M| \cross \dots |M|$ to $|M|$.
 \end{itemize}
 \end{definition}
@@ -406,7 +406,7 @@ Ie: Interpretation $M$, makes true $f^n(t_1,\dots,t_n)$ (An n-place function), i
 %\item $M \vDash \exists x F(c) iff $ there is an object $o \in |M| $ and given a name $c$ (that is not interpreted by $M$), $M: \vDash F(c)$
 % Textbook: 
 \item $M \vDash F[m]$ iff $M^c_m \vDash F(c)$ \\
-'If we considered the extended language $L \cup \{c\}$ obtained by adding a new constant $c$ in to our given language $L$, and if among all the extentions of our given interpretation of this extended language we considered the one $M^c_m$ that assigns $c$ the denotation $m$, then $F(c)$ would be true.'
+'If we considered the extended language $L \cup \{c\}$ obtained by adding a new constant $c$ in to our given language $L$, and if among all the extensions of our given interpretation of this extended language we considered the one $M^c_m$ that assigns $c$ the denotation $m$, then $F(c)$ would be true.'
 
 \item $M \vDash \forall x F (x) $ iff for every m in the domain , $M \vDash F(m)$
 \item $M \vDash \exists x F (x) $ iff for some m in the domain , $M \vDash m)$
@@ -415,7 +415,7 @@ Ie: Interpretation $M$, makes true $f^n(t_1,\dots,t_n)$ (An n-place function), i
 \end{definition}
 
 \begin{definition}
-of the denoteizan/extension of a closed term in a model M.
+of the denotation/extension of a closed term in a model M.
 If $T$ is a name $M(t) = v(t)$
 If $t$ is $f^n(t_1,\dots,t_n)$
 then \\
@@ -423,7 +423,7 @@ $M(f^n(t_1,\dots,t_n)$
 $M(f^n)(M(t_1),\dots,M(t_n)).$
 \end{definition}
 
-Validy = Satisfiability = Implication.\\
+Validity = Satisfiability = Implication.\\
 
 Misc-crap:
 \begin{itemize}
@@ -446,7 +446,7 @@ Example:
 If $A \vDash B$ and $B \vDash C$, then $A \vdash C$.
 Suppose $A \vDash B$, and $B \vDash C$.\\
 In every interpretation of $A$ and $B$ in which $A$ is true, $B$ is true,
-In everry interpretation of $B$ and $C$ in which $B$ is true, $C$ is true.
+In every interpretation of $B$ and $C$ in which $B$ is true, $C$ is true.
 Shows: In every interpretation of $A$ and $C$ in which $A$ is true, $C$ is true.
 
 Let $M$ be an interpretation of $A$ and $C$ such that $M \vDash A$.
@@ -459,20 +459,20 @@ So $M \vDash C$. \\
 Then there is an extension $M^+$ that interprets $B$ as well as $A$ and $C$. \\
 so: $M^+ \vDash B$ \\
 So: $M^+ \vDash C$ \\
-So $M \vdash C$ (By the ext, llemma) \\
+So $M \vdash C$ (By the ext, lemma) \\
 \end{itemize}
 
 
 %Stuff I kinda missed.
 \begin{lemma}[Undecibality]
 If the decision problem (for implication) is solvable, then the halting problem is solvable.
-There is an effective methoid for specifiing for any Turing machine $M$ and any input $N$ a finite set of setences $\Delta$ and a sentence $H$ such that $\Delta \vDash H$ iff $M$ eventually halts after starting with input $n$. \\
-$\Delta \vDash H$ iff $M$ eventualy alts after start with input n.\\
+There is an effective method for specifying for any Turing machine $M$ and any input $N$ a finite set of sentences $\Delta$ and a sentence $H$ such that $\Delta \vDash H$ iff $M$ eventually halts after starting with input $n$. \\
+$\Delta \vDash H$ iff $M$ eventually alts after start with input n.\\
 
 
 %\begin{proof}
 Define the one place predicate $Q_ij$ as: At time $j, M$ is in state $i$.
-Define the two place preidcate $@js$ as At time $j, M$, is scanning square $s$.
+Define the two place predicate $@js$ as At time $j, M$, is scanning square $s$.
 Define the two place predicate $Mjs$ as: At time $j,$ square $s$ is marked with a $1$.
 
 A description $D$ for a start state could then be:
@@ -484,7 +484,7 @@ Square \#, $[\dots -1 0 1 2 3 \dots ]$
 \end{lemma}
 
 %Some examples n stuff here.
-For each instructon of a $TM$, we may write the instruction as a setence: \\
+For each instruction of a $TM$, we may write the instruction as a sentence: \\
 $Q_{i1}S_1RQ_{i2}$ : 
 Move right seeing 1 in state: \\
 %Note: these are fome someone elses notes, and syntax may be wrong.
@@ -501,10 +501,10 @@ Misc-crap that's on the board for some reason: \\
 M^2             &:& \forall x \forall y ( Sxy \implies x < y )                            & \text{}\\
 0               &:& \forall x \forall y \forall z ((x < y \wedge y < z ) \implies x < z ) & \text{}\\
 S^2             &:& - \exists x , x < x                                                   & \text{+1}\\
-<^2             &:& & \text{lessthan}
+<^2             &:& & \text{less than}
 \end{align*}
 
-Some thingelse now too:\\
+Some thing else now too:\\
 %Node 1 : 1:R -> node 2
 $\forall x \forall t ((Q_1 t \wedge @tx \wedge Mtx ) \implies \exists u ( s_1 (t , u) \wedge Q_2(u) \wedge @ (u,v)) \wedge \forall y ((M(t,y) \implies M(u,y)) \wedge (-M(t,y) \implies - M(u,y)))))$ \\
 $\exists x \exists t ( Q_mt \wedge @tx \wedge Mtx)$\\
@@ -519,7 +519,7 @@ $\Delta \vDash H$ iff $M$ halts after starting with input n.
 \end{enumerate}
 \begin{enumerate}
 \item if $\Delta \vDash H$, then $M$ halts - Proof. \\
-Suppuse $\Delta \vDash H$ \\
+Suppose $\Delta \vDash H$ \\
 All members of $\Delta$ are true in the standard interpretation I.
 $H$ is true in $I$.
 So: $M$ halts.
@@ -527,10 +527,10 @@ So: $M$ halts.
 Suppose $M$ halts. (Show $\Delta \vDash H$). \\
 There is a time \underline{$t$} $M$ halts at t. \\
 There is a state $q_i, M$ halts at $t$ in state $q_i$. \\
-There is a square $x$, $M$ halts at $t$ in state $q_i$, scanning square $x$ which is Marked / $-$ Makred \\
+There is a square $x$, $M$ halts at $t$ in state $q_i$, scanning square $x$ which is Marked / $-$ Marked \\
 1: $Q_i(t) \wedge @(t,x) \wedge M(t,x)$. \\
 %These ones are names
-1 is a cojunct of the description of time t, $\mathbb{D}(t)$ \\
+1 is a conjunct of the description of time t, $\mathbb{D}(t)$ \\
 $\mathbb{D}(t) \vDash (i)$ \\
 %consider now..
 
@@ -544,7 +544,7 @@ So: $\mathbb{D}(t) \vDash H$. \\
 
 %D: the discription at time $t.
 
-$\Delta$ implies a description of everytime before which $M$ did not halt. \\
+$\Delta$ implies a description of every time before which $M$ did not halt. \\
 $\forall n$( if $M$ has not halted before time n, then $\Delta \vDash \mathbb{D}(n)$ \\
 \end{enumerate}
 \end{proof}
@@ -574,7 +574,7 @@ Proving the Inductive step: \\
 \item Suppose if $M$ has not halted before time $n$, then $\Delta \vDash \mathbb{D}(n)$.
 \item (Show : if $M$ has not halted before time $n+!$, then $\Delta \vDash \mathbb{D}(n+1)$)
 \item Suppose: $M$ has not halted before time $n+1$
-\item So: $M$ has not halte dbefore time $n$
+\item So: $M$ has not halted before time $n$
 \item So: $\Delta \vDash \mathbb{D}(n)$.
 \item (Show: $\Delta \cup \{\mathbb{D}(n)\} \vDash \mathbb{D}(n+1))$
 \item $\mathbb{D}(n): Q_jn \wedge @_{n,k} \wedge M_{n,k} \dots$
@@ -587,8 +587,8 @@ Proving the Inductive step: \\
 
 \end{proof}
 
-Then some random ramblings about logiceans. happend. Here's a book: "What is the name of this book?".\\
-There are methods of validlity, and truth trees, and some other stuff. He's gonna use this. He's gonna prove this has some properties for validity. \\
+Then some random ramblings about logicians. happened. Here's a book: "What is the name of this book?".\\
+There are methods of validity, and truth trees, and some other stuff. He's gonna use this. He's gonna prove this has some properties for validity. \\
 
 \section{Truth Trees}
 Ex:
@@ -604,7 +604,7 @@ $\frac{(A \implies B) \\ A}{B}$
 {
   to prove={A \implies B}
 }
-  [A , just=Assummed
+  [A , just=Assumed
     [-B, 
       [-A, close]
       [B, close]]]]
@@ -735,13 +735,13 @@ Then:
 $v(G) = \{1\}$
 \end{enumerate}
 
-The order of apllying rules:
+The order of applying rules:
 \begin{enumerate}
 \item TF
 \item NEGQ
 \item EI
 \item UI
-\item GOTO 1 (Untill nothing is done)
+\item GOTO 1 (Until nothing is done)
 \end{enumerate}
 
 \begin{remark}
