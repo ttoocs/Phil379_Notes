@@ -591,15 +591,45 @@ Then some random ramblings about logiceans. happend. Here's a book: "What is the
 There are methods of validlity, and truth trees, and some other stuff. He's gonna use this. He's gonna prove this has some properties for validity. \\
 
 \section{Truth Trees}
-$\frac{(A \implies B) \\ A}{B}$ \\
-$\{ ( A \implies B) , A , -B \}$ \\
-Tree: \\
-$(A \implies B)$ \\
-$A$ \\
-$-B$ \\
-left subnode: $-A$
-Right node :$B$
+Ex:
+$\frac{(A \implies B) \\ A}{B}$ 
+\hspace*{2cm} IS
+%Tree: \\
+%$(A \implies B)$ \\
+%$A$ \\
+%$-B$ \\
+%left subnode: $-A$
+%Right node :$B$
+\begin{prooftree}
+{
+  to prove={A \implies B}
+}
+  [A , just=Assummed
+    [-B, 
+      [-A, close={!u,!c}]
+      [B, close={!u,!c}]]]]
+\end{prooftree}
 
+Giving
+$\{ ( A \implies B) , A , -B \}$ \\
+%Example LATEX proof-tree:
+%\begin{prooftree}
+%{
+%  to prove={\{P \vee (Q \vee \lnot R), P \rightarrow \lnot R, Q \rightarrow \lnot R\} \vdash \lnot R}
+%}
+%  [P \vee (Q \vee \lnot R), just=Ass, checked
+%    [P \rightarrow \lnot R, just=Ass, checked
+%      [Q \rightarrow \lnot R, just=Ass, checked, name=last premise
+%        [\lnot\lnot R, just={$\lnot$ Conc}, name=not conc
+%          [P, just={$\vee$ Elim:!uuuu}
+%            [\lnot P, close={:!u,!c}]
+%            [\lnot R, close={:not conc,!c}, just={$\rightarrow$ Elim:!uuuu}]]
+%          [Q \vee \lnot R
+%            [Q, move by=1
+%              [\lnot Q, close={:!u,!c}]
+%              [\lnot R, close={:not conc,!c}, just={$\rightarrow$ Elim:last premise}]]
+%            [\lnot R, close={:not conc,!c}, move by=1, just={$\vee$ Elim:!u}]]]]]]
+%\end{prooftree}
 
 
 %\large{First-Order Logic Revamp:}
