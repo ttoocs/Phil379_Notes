@@ -1,6 +1,6 @@
 %Jan 10, 2017.
 
-\chapter{Discreate Math-esk stuff.}
+\chapter{Discrete Math-esk stuff.}
 \subsection{Misc. Notation}
 
 \begin{itemize}
@@ -673,9 +673,9 @@ Note: N is a new name only if there is not already a name on the path; otherwise
 \end{enumerate}
 
 \begin{remark}
-For 1-6, if the premises under an interpretation are true, then the conlusion is also true under that interpretation.
-For 7,8, Not as powerfull..
-For all: If the premisve of the rule is satisfiable, then there is an interpretation that makes the conclusions satisfiable.
+For 1-6, if the premises under an interpretation are true, then the conclusion is also true under that interpretation.
+For 7,8, Not as power full..
+For all: If the premise of the rule is satisfiable, then there is an interpretation that makes the conclusions satisfiable.
 (The property of satisfiablity travels down the tree)
 \end{remark}
 
@@ -807,28 +807,28 @@ Ex:
 \end{prooftree}
 \end{remark}
 
-Tree validity: A finished tree consits of a path o
+Tree validity: A finished tree consist of a path o
 
 \begin{lemma}[Completeness]
 \begin{remark}[If the Tree Methoid classifies $S$ as valid, then $S$ is valid]
 \begin{proof}
-If there is a finished tree $T$, whose inital list conisits of $-S$, and all paths of $T$ are closed, then $S$ is valid ($-S$ is unsatisfible). \\
-Any tree whose inital list is satisfiable, has an open path. \\
+If there is a finished tree $T$, whose initial list consist of $-S$, and all paths of $T$ are closed, then $S$ is valid ($-S$ is unsatisfiable). \\
+Any tree whose initial list is satisfiable, has an open path. \\
 From a prior remark:\\
-\hspace{0.5cm} For all: If the premisve of the rule is satisfiable, then there is an interpretation that makes the conclusions satisfiable.
+\hspace{0.5cm} For all: If the premise of the rule is satisfiable, then there is an interpretation that makes the conclusions satisfiable.
 \end{proof}
 \end{remark}
 
 \begin{remark}[If the Tree Methoid classifies $S$ as invalid, then $S$ is invalid.]
 \begin{proof}
-If a tree $T$, whose inital list conists of $-s$ has an open path, then $-S$ is satisfiable (S is not valid). \\
+If a tree $T$, whose initial list consist of $-s$ has an open path, then $-S$ is satisfiable (S is not valid). \\
 Any finished open path of a tree, determines an interpretation in which all lines of that path are true.
 \end{proof}
 \end{remark}
 
 \end{lemma}
 
-Let $M$ be the intepretation determined by $p$. Show: All lines on $P$ are ture in $m$. \\
+Let $M$ be the interpretation determined by $p$. Show: All lines on $P$ are true in $m$. \\
 Suppose there is some line on this path that is not true: We want to show that that is incorrect. There could be two such lines, or more....  If there are, they could be the same length ... if they don't, then the one that is shorter than the other, is hence called being "shorty". Being a "shorty" is true in the case that there is no line that is FALSE and there is no line shorter than it. (or them, if there are multiple shorties).
 Our proof: is to show that there is no such shorties, hence all lines are true.
 
@@ -837,7 +837,7 @@ Our proof: is to show that there is no such shorties, hence all lines are true.
 \item The denial of all atomic sentences comes from the fact that if $Fa$ is on the path, then $-Fa$ cannot be on the path.
 \item Conjunction: If there was a conjunction on the path, then it would be checked, meaning that it's conjuncts are on the path. However these are shorter than shorty. and implies this(?)
 \item If shorty was a denial of a conjunction, then again shorter things are created, and implies this.. 
-\item Exitenal: It's instance will be on the path, which is shorter... again.. which implies the premise.
+\item existential: It's instance will be on the path, which is shorter... again.. which implies the premise.
 \item Universal: The conclusion is on the path and is shorter.. but that's not good enough. idk. 
 \end{enumerate}
 
