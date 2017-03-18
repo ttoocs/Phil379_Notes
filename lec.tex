@@ -1,5 +1,6 @@
 %Jan 10, 2017.
 
+\chapter{Discreate Math-esk stuff.}
 \subsection{Misc. Notation}
 
 \begin{itemize}
@@ -105,6 +106,8 @@ It's a Proof by contradiction. %(I was too lazy to write it down)
 
 %Another lecture.
 %We now go into more turing machines stuffs.
+
+\chapter{Turing Machines}
 
 Turing machines are in the following form: $q_n, S_{1/0}, S_{1/0}/R/L, q_m$ where $q_n$ is our current state, and you see $S_{1/0}$, perform function $S_{1/0}/R/$ and move to state $q_m$. If there is no operation specified on the current state for a scan, then it halts. (Also Called the Turing Alphabet)
 
@@ -301,7 +304,8 @@ So we know that $g(n) = 2$ \\
 
 %%Two weeks later: Some actual notes.. maybe. idk
 %%Chapt 10 I think.
-\section{Sentental logic}
+%\newpage
+\chapter{First Order logic}
 Some symbols n things:
 \begin{itemize}
 \item ( 
@@ -327,8 +331,7 @@ Some symbols n things:
 \end{tabular}
 \end{itemize}
 
-
-\begin{definition}[Term]
+\begin{definition}Term
 \begin{itemize}
 \item Every variable is a(n atomic) (open) term.
 \item Every constant is a(n atomic) (closed) term. %(or name?)
@@ -337,7 +340,7 @@ Some symbols n things:
 \end{itemize}
 \end{definition}
 
-\begin{definition}[Formula]
+\begin{definition}Formula
 \begin{itemize}
 \item $A^n(t_1,\dots,t_n)$ is a formula where $A^n$ is an $n-$place predicate and $t_i$ are terms. (This is an atomic formula).
 \item If $F$ is a formula then $-F$ is a formula
@@ -389,13 +392,13 @@ A model $M$ (interpretation) of a language $L$ is $\{|M| v\}$ Where $|M|$ is a n
 \end{definition}
 
 
-\begin{definition}[Truth]
+\begin{definition}Truth: \\
 \begin{itemize}
-\item For some predicate $R$: $M \vDash R(t_1,\dots,t_n)$ iff $R^M(t_1^M,\dots,t_n^M)$ \\
+\item For some predicate $R$: $M \vDash R(t_1,\dots,t_n)$ iff $R^M(t_1^M,\dots,t_n^M)$ 
 \item For Identity function (when present): $M \vDash =(t_1,t_2)$ iff $t_1^M = t_2^M$.
 \item $M \vDash F^n (t_1,\dots,t_n)$ iff $<M(t_1),\dots,M(t_n)> \in M(F^n)$. \\
 Textbook writes this as: $(f(t_1, \dots t_n))^M = f^M (t_1^M , \dots, t_n^M)$.
-Ie: Interpretation $M$, makes true $f^n(t_1,\dots,t_n)$ (An n-place function), iff $\{t_1^M , \dots, t_n^M\} \in M(F^n)$ %Is this correct? ben agrees 
+\\ Ie: Interpretation $M$, makes true $f^n(t_1,\dots,t_n)$ (An n-place function), iff $\{t_1^M , \dots, t_n^M\} \in M(F^n)$ %Is this correct? ben agrees 
 %\item $M \vDash -S iff M \not = S$. %Notes
 \item $M \vDash -S $ iff $M \not \vDash S$ %Textbook
 %Textbook denotes K/L as F/G$.
@@ -613,27 +616,71 @@ $\frac{(A \implies B) \\ A}{B}$
 Giving
 $\{ ( A \implies B) , A , -B \}$ \\
 
-He then did all these,( which seem to be rules):\\
-\begin{prooftree}
+\large{Proof tree rules.}
+\begin{enumerate}
+
+\item \begin{prooftree}
 {to prove={\alpha}}
 [\alpha
   [-\alpha, close]]
 \end{prooftree}
 
-\begin{prooftree}
+\item \begin{prooftree}
+{}
+[( - - \alpha), just=Assumed, checked
+  [\alpha]]
+\end{prooftree}
+
+\item \begin{prooftree}
 {to prove={\alpha \wedge \beta}}
 [(\alpha \wedge \beta), just=Assumed, checked
   [\alpha
     [\beta]]]
 \end{prooftree}
 
-\begin{prooftree}
+\item \begin{prooftree}
 {to prove={-(\alpha \wedge \beta}}
 [-(\alpha \wedge \beta), checked
   [-\alpha]
   [-\beta]]
 \end{prooftree}
 
+\item \begin{prooftree}
+{}
+[- \exists x \_ x \_
+  [\forall x - \_ x \_]]
+\end{prooftree}
+
+\item \begin{prooftree}
+{}
+[- \forall x \_ x \_
+  [\exists x - \_ x \_]]
+\end{prooftree}
+
+\item \begin{prooftree}
+{}
+[\exists \_ x \_
+  [ \_ n \_]]
+\end{prooftree} \\
+Note: n is a name new to the path
+
+\item \begin{prooftree}
+{}
+[\forall x \_ x \_
+  [ \_ n \_n ]]
+\end{prooftree} \\
+Note: N is a new name only if there is not already a name on the path; otherwise n is a name already on the path.
+\end{enumerate}
+
+\begin{remark}
+For 1-6, if the premises under an interpretation are true, then the conlusion is also true under that interpretation.
+For 7,8, Not as powerfull..
+For all: If the premisve of the rule is satisfiable, then there is an interpretation that makes the conclusions satisfiable.
+(The property of satisfiablity travels down the tree)
+\end{remark}
+
+Examples:
+%NOT A RULE...?
 \begin{prooftree}
 {to prove={\alpha \vee \beta}}
 [(\alpha \vee \beta), checked
@@ -641,12 +688,14 @@ He then did all these,( which seem to be rules):\\
   [\beta]]
 \end{prooftree}
 
+%NOT A RULE...?
 \begin{prooftree}
 {to prove={-(\alpha \vee \beta)}}
 [-(\alpha \vee \beta), checked
   [-\alpha]
   [-\beta]]
 \end{prooftree}
+
 
 \begin{prooftree}
 {to prove={- \forall x x \varnothing }}
@@ -699,7 +748,6 @@ Which is INVALID. \\
                 [Ga , close]]]]]]]]]
 \end{prooftree}
 
-\newpage 
 
 Another same-case example:
 $\frac{\forall x (Fx \rightarrow Gx) \\ \exists x G x }{\exists x F x}$
@@ -746,7 +794,53 @@ The order of applying rules:
 
 \begin{remark}
 Sometimes, this never finishes. But that's due to the undecidiblity of things...
+\\
+Ex:
+\begin{prooftree}
+{}
+[\forall x \exists y R x y
+  [\exists y R a y , checked
+  [R a b
+  [\exists y R b y , checked
+  [R b c
+  [\exists y R c y]]]]]]
+\end{prooftree}
 \end{remark}
+
+Tree validity: A finished tree consits of a path o
+
+\begin{lemma}[Completeness]
+\begin{remark}[If the Tree Methoid classifies $S$ as valid, then $S$ is valid]
+\begin{proof}
+If there is a finished tree $T$, whose inital list conisits of $-S$, and all paths of $T$ are closed, then $S$ is valid ($-S$ is unsatisfible). \\
+Any tree whose inital list is satisfiable, has an open path. \\
+From a prior remark:\\
+\hspace{0.5cm} For all: If the premisve of the rule is satisfiable, then there is an interpretation that makes the conclusions satisfiable.
+\end{proof}
+\end{remark}
+
+\begin{remark}[If the Tree Methoid classifies $S$ as invalid, then $S$ is invalid.]
+\begin{proof}
+If a tree $T$, whose inital list conists of $-s$ has an open path, then $-S$ is satisfiable (S is not valid). \\
+Any finished open path of a tree, determines an interpretation in which all lines of that path are true.
+\end{proof}
+\end{remark}
+
+\end{lemma}
+
+Let $M$ be the intepretation determined by $p$. Show: All lines on $P$ are ture in $m$. \\
+Suppose there is some line on this path that is not true: We want to show that that is incorrect. There could be two such lines, or more....  If there are, they could be the same length ... if they don't, then the one that is shorter than the other, is hence called being "shorty". Being a "shorty" is true in the case that there is no line that is FALSE and there is no line shorter than it. (or them, if there are multiple shorties).
+Our proof: is to show that there is no such shorties, hence all lines are true.
+
+\begin{enumerate}[Induction on complexity]
+\item By our definitions: No atomic sentences are shorties.
+\item The denial of all atomic sentences comes from the fact that if $Fa$ is on the path, then $-Fa$ cannot be on the path.
+\item Conjunction: If there was a conjunction on the path, then it would be checked, meaning that it's conjuncts are on the path. However these are shorter than shorty. and implies this(?)
+\item If shorty was a denial of a conjunction, then again shorter things are created, and implies this.. 
+\item Exitenal: It's instance will be on the path, which is shorter... again.. which implies the premise.
+\item Universal: The conclusion is on the path and is shorter.. but that's not good enough. idk. 
+\end{enumerate}
+
 %Example LATEX proof-tree:
 %\begin{prooftree}
 %{
