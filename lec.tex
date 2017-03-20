@@ -471,20 +471,19 @@ So $M \vdash C$ (By the ext, lemma) \\
 If the decision problem (for implication) is solvable, then the halting problem is solvable.
 There is an effective method for specifying for any Turing machine $M$ and any input $N$ a finite set of sentences $\Delta$ and a sentence $H$ such that $\Delta \vDash H$ iff $M$ eventually halts after starting with input $n$. \\
 $\Delta \vDash H$ iff $M$ eventually alts after start with input n.\\
-
-
+\end{lemma}
 %\begin{proof}
-Define the one place predicate $Q_ij$ as: At time $j, M$ is in state $i$.
-Define the two place predicate $@js$ as At time $j, M$, is scanning square $s$.
-Define the two place predicate $Mjs$ as: At time $j,$ square $s$ is marked with a $1$.
+Define the one place predicate $Q_ij$ as: At time $j, M$ is in state $i$. \\
+Define the two place predicate $@js$ as At time $j, M$, is scanning square $s$. \\
+Define the two place predicate $Mjs$ as: At time $j$, square $s$ is marked with a $1$. \\
 
-A description $D$ for a start state could then be:
-$D: [Q_10 \wedge @_{0,0} \wedge M_{0,0} \wedge M_{0,1} \wedge M_{0,2} \wedge \forall y((y \not = 0 \wedge y \not = 1 \wedge y \not = 2 ) \implies - M_{0,y}]$
-Time = 0, $[ \dots 0 1 1 1 0 \dots ]$
-Square \#, $[\dots -1 0 1 2 3 \dots ]$
+A description $D$ for a start state could then be: \\
+$D: [Q_10 \wedge @_{0,0} \wedge M_{0,0} \wedge M_{0,1} \wedge M_{0,2} \wedge \forall y((y \not = 0 \wedge y \not = 1 \wedge y \not = 2 ) \implies - M_{0,y}]$ \\
+Time = 0, $[ \dots 0 1 1 1 0 \dots ]$ \\
+Square \#, $[\dots -1 0 1 2 3 \dots ]$ \\
 
 %\end{proof}
-\end{lemma}
+%\end{lemma}
 
 %Some examples n stuff here.
 For each instruction of a $TM$, we may write the instruction as a sentence: \\
@@ -495,20 +494,22 @@ $\forall x \forall t ((Q_{i,1} \wedge @_{t,x} \wedge M_{t,x}) \implies (Q_{i2,(t
 
 
 %New lecture:
-Misc-crap that's on the board for some reason: \\
+\large{This is apprently the $L_t()$ for A3.Q3.}
+Misc-crap that's on the board for some reason: (The Q,@, and M are also defined a little bit above).\\
 %Seems like shorthand for definitions... and something about Delta.
+%I think these are just raw logic definitions.
 \begin{align*}
  & \Delta \\
 \mathbb{Q}^1_2  &:& \forall x \forall y \forall z ((Sxy \wedge Sxz) \implies y = z)       & \text{}\\
 @^2            &:& \forall x \forall y \forall z ((Sxz \wedge Syz) \implies x = y )       & \text{}\\
 M^2             &:& \forall x \forall y ( Sxy \implies x < y )                            & \text{}\\
 0               &:& \forall x \forall y \forall z ((x < y \wedge y < z ) \implies x < z ) & \text{}\\
-S^2             &:& - \exists x , x < x                                                   & \text{+1}\\
+S^2             &:& - \exists x , x < x                                                   & \text{Sucsessor (+1)}\\
 <^2             &:& & \text{less than}
 \end{align*}
 
 Some thing else now too:\\
-%Node 1 : 1:R -> node 2
+Node 1 : 1:R -> node 2 \\
 $\forall x \forall t ((Q_1 t \wedge @tx \wedge Mtx ) \implies \exists u ( s_1 (t , u) \wedge Q_2(u) \wedge @ (u,v)) \wedge \forall y ((M(t,y) \implies M(u,y)) \wedge (-M(t,y) \implies - M(u,y)))))$ \\
 $\exists x \exists t ( Q_mt \wedge @tx \wedge Mtx)$\\
 
