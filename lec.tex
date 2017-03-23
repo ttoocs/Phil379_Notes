@@ -473,6 +473,8 @@ There is an effective method for specifying for any Turing machine $M$ and any i
 $\Delta \vDash H$ iff $M$ eventually alts after start with input n.\\
 \end{lemma}
 %\begin{proof}
+\large{Writting a turning machine as logic. $L_t$}\\
+
 Define the one place predicate $Q_ij$ as: At time $j, M$ is in state $i$. \\
 Define the two place predicate $@js$ as At time $j, M$, is scanning square $s$. \\
 Define the two place predicate $Mjs$ as: At time $j$, square $s$ is marked with a $1$. \\
@@ -492,20 +494,19 @@ Move right seeing 1 in state: \\
 %Note: these are fome someone elses notes, and syntax may be wrong.
 $\forall x \forall t ((Q_{i,1} \wedge @_{t,x} \wedge M_{t,x}) \implies (Q_{i2,(t+1)} \wedge @_{(t+1),(x+1)} \wedge \forall y((M_{t,y} \implies M_{(t+1),y}) \wedge (- M_{t,y} \implies - M_{(t+1),y}))$
 
-
 %New lecture:
-\large{This is apprently the $L_t()$ for A3.Q3.}
+%\large{This is apprently the $L_t()$ for A3.Q3.}
 Misc-crap that's on the board for some reason: (The Q,@, and M are also defined a little bit above).\\
 %Seems like shorthand for definitions... and something about Delta.
 %I think these are just raw logic definitions.
 \begin{align*}
- & \Delta \\
+ & \Delta &:&& \text{ A set of sentences.}\\
 \mathbb{Q}^1_2  &:& \forall x \forall y \forall z ((Sxy \wedge Sxz) \implies y = z)       & \text{}\\
 @^2            &:& \forall x \forall y \forall z ((Sxz \wedge Syz) \implies x = y )       & \text{}\\
 M^2             &:& \forall x \forall y ( Sxy \implies x < y )                            & \text{}\\
 0               &:& \forall x \forall y \forall z ((x < y \wedge y < z ) \implies x < z ) & \text{}\\
-S^2             &:& - \exists x , x < x                                                   & \text{Sucsessor (+1)}\\
-<^2             &:& & \text{less than}
+S^2             &:& - \exists x , x < x                                                   & \text{ Sucsessor (+1)}\\
+<^2             &:& & \text{ less than} 
 \end{align*}
 
 Some thing else now too:\\
@@ -562,16 +563,16 @@ Only if: $\Delta \vDash H$ only if $M$ eventually halts. \\
 if: if $M$ eventually halts then $\Delta \vDash H$. \\
 Suppose: $M$ halts at $t$\\
 $\mathbb{D}(t) \vDash(H)$ \\ %Proved earlyer?
-Show: $\Delta \vDash \mathbb{D}(t)$
+Show: $\Delta \vDash \mathbb{D}(t)$ \\
 
-Something inductive:
-Base step: if $M$ has not halted before time 0, then $\Delta \vDash \mathbb{D}(0)$:
-Inductive step: $\forall n ($ if $M$ has not halted before time $n$, then $\Delta \vDash \mathbb{D}(n)$ only if if$M$ has not halted before time $n+!$, then $\Delta \vDash \mathbb{D}(n+1))$
+Something inductive: \\
+Base step: if $M$ has not halted before time 0, then $\Delta \vDash \mathbb{D}(0)$: \\
+Inductive step: $\forall n ($ if $M$ has not halted before time $n$, then $\Delta \vDash \mathbb{D}(n)$ iff $M$ has not halted before time $n+!$, then $\Delta \vDash \mathbb{D}(n+1))$ \\
 % Induction layout:
 % F_0
 % \forall n (F_n \implies F_{n+1}
 % \forall n F_n
-Conclusion: $\forall n$ (if $M$  has not halted before time $n$, then $\Delta \vDash \mathbb{D}(n)$.
+Conclusion: $\forall n$ (if $M$  has not halted before time $n$, then $\Delta \vDash \mathbb{D}(n)$. \\
 
 Proving the Inductive step: \\
 \begin{itemize}
@@ -845,6 +846,7 @@ Let $M$ be the intepretation determined by $p$. Show: All lines on $P$ are ture 
 Suppose there is some line on this path that is not true: We want to show that that is incorrect. There could be two such lines, or more....  If there are, they could be the same length ... if they don't, then the one that is shorter than the other, is hence called being "shorty". Being a "shorty" is true in the case that there is no line that is FALSE and there is no line shorter than it. (or them, if there are multiple shorties).
 Our proof: is to show that there is no such shorties, hence all lines are true.
 
+%LOL, looks rediculous, don't care.
 \begin{enumerate}[Induction on complexity]
 \item By our definitions: No atomic sentences are shorties.
 \item The denial of all atomic sentences comes from the fact that if $Fa$ is on the path, then $-Fa$ cannot be on the path.
@@ -918,3 +920,26 @@ Our proof: is to show that there is no such shorties, hence all lines are true.
 %
 %\end{itemize} %end some defs for first-order logic.
 %
+
+
+%MORE LECTURES, OH BOY OH BOY OH idongiveashit.
+\begin{enumerate}
+\item If $TM$ classifies a sentence $S$ as valid, then $S$ is valid. \\
+Any tree whose inital list is satisfiable has an open path.
+\item If $TM$ classifies a sentence $S$ as invalid, then $S$ is invalid. \\
+If a tree has a finished open path, then it's inital list is satisfiable.
+\begin{lemma}Completeness Lemma\\
+Any finished open path determines an interpretation in which all lines of that patha re true.
+\end{lemma}
+\item If $TM$ does not classify a sentence $S$ as unsatisfiable, then $S$ is satisfiable. \\
+Suppose $TM$ does not classify $S$ as unsatisfiable:\\
+1: $TM$ classifies S as satisfiable \\
+2: $TM$ does not classify $S$ as all\\
+So: There is an infinite complete tree on $S$. \\
+Every infinite tree has an infinite path. \\
+$T$ has an infinite and also complete path $P$. \\
+$P$ must be open. \\
+Proof by Completness lemma. \\
+\end{enumerate}
+%A complete path is a path, is a path wich has ever rule that is applicapa to that path has been applied. Ie, there are no more rules left to apply to it.
+
