@@ -923,6 +923,7 @@ Our proof: is to show that there is no such shorties, hence all lines are true.
 
 
 %MORE LECTURES, OH BOY OH BOY OH idongiveashit.
+Soundness Theorem: \\
 \begin{enumerate}
 \item If $TM$ classifies a sentence $S$ as valid, then $S$ is valid. \\
 Any tree whose inital list is satisfiable has an open path.
@@ -940,6 +941,18 @@ Every infinite tree has an infinite path. \\
 $T$ has an infinite and also complete path $P$. \\
 $P$ must be open. \\
 Proof by Completness lemma. \\
+\item If a sentence $S$ is unsatisfiable, then $TM$ classifies $S$ as unsatisfiable.
+\item If a Sentence $S$ is implied by a finite set of sentence $K$, then $TM$ declares that $S$ is implied by $K$.
+\item For any  set of sentences $S$, if $S$ is unsatisfiable, then $TM$ classifies $S$ as unsatisfiable.
 \end{enumerate}
+Soundness Theroem: (5') For any set of sentences $S$, if $TM$ classifies $S$ as unsatisfiable, then $S$ is unsatisfiable. \\
+i: If a set is astisfiable, then any complete tree based on $S$ has an open path. (by 5') \\
+ii: If a complete tree has an open path $p$, then $P$ has a numerical interpretation in which all lines of $P$ are true. (From the completeness lemma)\\
+
 %A complete path is a path, is a path wich has ever rule that is applicapa to that path has been applied. Ie, there are no more rules left to apply to it.
 
+
+Lowenheim-Skolem Theorem:\\
+Every satisfiable set of sentences has an enumerable model.
+The compactness Theorem:\\
+If a set S is unsatifiable then some finite usbset of S is unsatisfiable. (If every finite subset of S is satisfiable then S is satisfiable)
