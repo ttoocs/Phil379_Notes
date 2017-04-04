@@ -1,6 +1,6 @@
 %Jan 10, 2017.
 
-\chapter{Discreate Math-esk stuff.}
+\chapter{Discrete Math-esk stuff.}
 \subsection{Misc. Notation}
 
 \begin{itemize}
@@ -473,7 +473,7 @@ There is an effective method for specifying for any Turing machine $M$ and any i
 $\Delta \vDash H$ iff $M$ eventually alts after start with input n.\\
 \end{lemma}
 %\begin{proof}
-\large{Writting a turning machine as logic. $L_t$}\\
+\large{Writing a turning machine as logic. $L_t$}\\
 
 Define the one place predicate $Q_ij$ as: At time $j, M$ is in state $i$. \\
 Define the two place predicate $@js$ as At time $j, M$, is scanning square $s$. \\
@@ -505,7 +505,7 @@ Misc-crap that's on the board for some reason: (The Q,@, and M are also defined 
 @^2            &:& \forall x \forall y \forall z ((Sxz \wedge Syz) \implies x = y )       & \text{}\\
 M^2             &:& \forall x \forall y ( Sxy \implies x < y )                            & \text{}\\
 0               &:& \forall x \forall y \forall z ((x < y \wedge y < z ) \implies x < z ) & \text{}\\
-S^2             &:& - \exists x , x < x                                                   & \text{ Sucsessor (+1)}\\
+S^2             &:& - \exists x , x < x                                                   & \text{ Successor (+1)}\\
 <^2             &:& & \text{ less than} 
 \end{align*}
 
@@ -675,10 +675,10 @@ Note: N is a new name only if there is not already a name on the path; otherwise
 \end{enumerate}
 
 \begin{remark}
-For 1-6, if the premises under an interpretation are true, then the conlusion is also true under that interpretation.
-For 7,8, Not as powerfull..
-For all: If the premisve of the rule is satisfiable, then there is an interpretation that makes the conclusions satisfiable.
-(The property of satisfiablity travels down the tree)
+For 1-6, if the premises under an interpretation are true, then the conclusion is also true under that interpretation.
+For 7,8, Not as powerful..
+For all: If the permissive of the rule is satisfiable, then there is an interpretation that makes the conclusions satisfiable.
+(The property of satisfiability travels down the tree)
 \end{remark}
 
 
@@ -801,7 +801,7 @@ How to use a proof-tree: %Done, mar18, from https://www.youtube.com/watch?v=B456
 \item Negate the conclusion. (Setup)
 %So-far, this is the same as what I've heard from peers.
 \item Apply rule (see lists above) (Apply to all open branches)
-\item Check for contradictoins. (Close those branches) Repeat 3 till nothing to apply to.
+\item Check for contradictions. (Close those branches) Repeat 3 till nothing to apply to.
 \item If all branches are closed, then the argument is valid. else, it's invalid. (IE, there is a counter example, as we negated the conclusion)
 \end{enumerate}
 
@@ -821,28 +821,28 @@ Ex:
 \end{prooftree}
 \end{remark}
 
-Tree validity: A finished tree consits of a path o
+Tree validity: A finished tree consist of a path o
 
 \begin{lemma}[Completeness]
 \begin{remark}[If the Tree Methoid classifies $S$ as valid, then $S$ is valid]
 \begin{proof}
-If there is a finished tree $T$, whose inital list conisits of $-S$, and all paths of $T$ are closed, then $S$ is valid ($-S$ is unsatisfible). \\
-Any tree whose inital list is satisfiable, has an open path. \\
+If there is a finished tree $T$, whose Initial list consist of $-S$, and all paths of $T$ are closed, then $S$ is valid ($-S$ is unsatisfiable). \\
+Any tree whose Initial list is satisfiable, has an open path. \\
 From a prior remark:\\
-\hspace{0.5cm} For all: If the premisve of the rule is satisfiable, then there is an interpretation that makes the conclusions satisfiable.
+\hspace{0.5cm} For all: If the premise of the rule is satisfiable, then there is an interpretation that makes the conclusions satisfiable.
 \end{proof}
 \end{remark}
 
 \begin{remark}[If the Tree Methoid classifies $S$ as invalid, then $S$ is invalid.]
 \begin{proof}
-If a tree $T$, whose inital list conists of $-s$ has an open path, then $-S$ is satisfiable (S is not valid). \\
+If a tree $T$, whose Initial list consist of $-s$ has an open path, then $-S$ is satisfiable (S is not valid). \\
 Any finished open path of a tree, determines an interpretation in which all lines of that path are true.
 \end{proof}
 \end{remark}
 
 \end{lemma}
 
-Let $M$ be the intepretation determined by $p$. Show: All lines on $P$ are ture in $m$. \\
+Let $M$ be the interpretation determined by $p$. Show: All lines on $P$ are true in $m$. \\
 Suppose there is some line on this path that is not true: We want to show that that is incorrect. There could be two such lines, or more....  If there are, they could be the same length ... if they don't, then the one that is shorter than the other, is hence called being "shorty". Being a "shorty" is true in the case that there is no line that is FALSE and there is no line shorter than it. (or them, if there are multiple shorties).
 Our proof: is to show that there is no such shorties, hence all lines are true.
 
@@ -852,7 +852,7 @@ Our proof: is to show that there is no such shorties, hence all lines are true.
 \item The denial of all atomic sentences comes from the fact that if $Fa$ is on the path, then $-Fa$ cannot be on the path.
 \item Conjunction: If there was a conjunction on the path, then it would be checked, meaning that it's conjuncts are on the path. However these are shorter than shorty. and implies this(?)
 \item If shorty was a denial of a conjunction, then again shorter things are created, and implies this.. 
-\item Exitenal: It's instance will be on the path, which is shorter... again.. which implies the premise.
+\item Existential: It's instance will be on the path, which is shorter... again.. which implies the premise.
 \item Universal: The conclusion is on the path and is shorter.. but that's not good enough. idk. 
 \end{enumerate}
 
@@ -926,11 +926,11 @@ Our proof: is to show that there is no such shorties, hence all lines are true.
 Soundness Theorem: \\
 \begin{enumerate}
 \item If $TM$ classifies a sentence $S$ as valid, then $S$ is valid. \\
-Any tree whose inital list is satisfiable has an open path.
+Any tree whose initial list is satisfiable has an open path.
 \item If $TM$ classifies a sentence $S$ as invalid, then $S$ is invalid. \\
-If a tree has a finished open path, then it's inital list is satisfiable.
+If a tree has a finished open path, then it's initial list is satisfiable.
 \begin{lemma}Completeness Lemma\\
-Any finished open path determines an interpretation in which all lines of that patha re true.
+Any finished open path determines an interpretation in which all lines of that path re true.
 \end{lemma}
 \item If $TM$ does not classify a sentence $S$ as unsatisfiable, then $S$ is satisfiable. \\
 Suppose $TM$ does not classify $S$ as unsatisfiable:\\
@@ -940,13 +940,13 @@ So: There is an infinite complete tree on $S$. \\
 Every infinite tree has an infinite path. \\
 $T$ has an infinite and also complete path $P$. \\
 $P$ must be open. \\
-Proof by Completness lemma. \\
+Proof by Completeness lemma. \\
 \item If a sentence $S$ is unsatisfiable, then $TM$ classifies $S$ as unsatisfiable.
 \item If a Sentence $S$ is implied by a finite set of sentence $K$, then $TM$ declares that $S$ is implied by $K$.
 \item For any  set of sentences $S$, if $S$ is unsatisfiable, then $TM$ classifies $S$ as unsatisfiable.
 \end{enumerate}
-Soundness Theroem: (5') For any set of sentences $S$, if $TM$ classifies $S$ as unsatisfiable, then $S$ is unsatisfiable. \\
-i: If a set is astisfiable, then any complete tree based on $S$ has an open path. (by 5') \\
+Soundness Theorem: (5') For any set of sentences $S$, if $TM$ classifies $S$ as unsatisfiable, then $S$ is unsatisfiable. \\
+i: If a set is satisfiable, then any complete tree based on $S$ has an open path. (by 5') \\
 ii: If a complete tree has an open path $p$, then $P$ has a numerical interpretation in which all lines of $P$ are true. (From the completeness lemma)\\
 
 %A complete path is a path, is a path wich has ever rule that is applicapa to that path has been applied. Ie, there are no more rules left to apply to it.
@@ -955,16 +955,51 @@ ii: If a complete tree has an open path $p$, then $P$ has a numerical interpreta
 Lowenheim-Skolem Theorem:\\
 Every satisfiable set of sentences has an enumerable model.
 The compactness Theorem:\\
-If a set S is unsatifiable then some finite usbset of S is unsatisfiable. (If every finite subset of S is satisfiable then S is satisfiable)
+If a set S is unsatisfiable then some finite subset of S is unsatisfiable. (If every finite subset of S is satisfiable then S is satisfiable)
 
 
 \chapter{Second order logic}
 %%Second Order logic.
 
+TLDR: We allow predicates to be replaced by Second order variables. It's neat. \\
+
+
 Model: The same.\\
 Truth: Instead of ever element $m$ in the domain, it is every set $m$ of the domain. \\
 Identity: $\forall x \forall y ( x = y $ iff $\forall F(Fx $ iff $Fy)$ \\
 
-Given any first order sentence, if we replace any predicates with variables... something second sentence existental.
+Given any first order sentence, %if we replace any predicates with variables... something second sentence existental.
+which has a model that is in an interpretation that is true, and it has n objects in its domain. Then the corresponding existential generalization is going to be true in all models of size n.\\
+IE: true in an interpretation/model in size n $iff$ true in all models of size n.
+
+%SECOND LAST CLASS OMG FINALLY:
+Some claims: \\
+\begin{enumerate}
+\item For any 1st order sentence $S$, if $S$ has a model of size $n$ then $\exists S^{II}$ is true in all models of size $n$.
+\item For any first order sentence $S$, free of any identity and function symbols, if $S$ is satisfiable, then $S$ has a countable but infinite (denumerable), model. 
+\end{enumerate}
+
+EX:
+$ \forall x \exists y Rxy \wedge - \exists x Rxx \wedge \forall x \forall y \forall z((Rxy \wedge Ryz) \rightarrow Rxz) $ \\ (Less-than on the integers!)
+Generalized: \\
+$ \forall X [ \forall x \exists y Xxy \wedge - \exists xXxx \wedge \forall x \forall y \forall z ((Xxy \wedge Xyz ) \rightarrow Xxz)]$ Which is true in only those interpretations whose domain is infinite. AND is true in all those interpretations whose domain is infinite. \\
+
+Let $S$ be a $1st$ order sentence free of identity and function symbols: \\
+$S^* : (\exists A^{II} \rightarrow \exists S^{II})$ \\
+If $S$ is satisfiable, then $S^*$ is valid. \\
+If $S^*$ is valid, then $S$ is satisfiable. \\
 
 
+There is an effective method for writing for any $1st$ order sentence (free of identity and f symbols) a second order sentence $S^*$. \\
+$S$ is satisfiable iff $S^*$ is valid. \\
+
+Incomplete: \\
+\begin{enumerate}
+
+\item If there is a positive test for $2nd$ order validity, then there is a positive test for $1st$ order satisfiablity.
+\item There is no positive test for $1st$ order satisfiablity.
+\item Hence there is no positive test for $2nd$ order validity. (Incomplete)
+
+\end{enumerate}
+
+%There is no validity test for second order logic. It is incomplete. There are valid sentence, but no way to validify all.
