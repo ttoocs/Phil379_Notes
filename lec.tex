@@ -953,11 +953,15 @@ ii: If a complete tree has an open path $p$, then $P$ has a numerical interpreta
 
 
 Lowenheim-Skolem Theorem:\\
-Every satisfiable set of sentences has an enumerable model.
+Every satisfiable set of sentences has an enumerable model. \\
+
+From wikipedia:  if a countable first-order theory has an infinite model, then for every infinite cardinal number $k$ it has a model of size $k$.
+
 The compactness Theorem:\\
-If a set S is unsatisfiable then some finite subset of S is unsatisfiable. (If every finite subset of S is satisfiable then S is satisfiable)
+If a set S is unsatisfiable then some finite subset of S is unsatisfiable. (If every finite subset of S is satisfiable then S is satisfiable) \\
 
-
+From wikipedia:  a set of first-order sentences has a model if and only if every finite subset of it has a model.
+ 
 \chapter{Second order logic}
 %%Second Order logic.
 
@@ -1007,9 +1011,9 @@ Incomplete: \\
 
 %%FINAL LECTURE Q&A thing:
 
-Final test: Completness-onwards.
+Final test: Completness-onwards. \\
 
-Completness: If the sentence is valid then there is a proof of it's validity.
+Completness: If the sentence is valid then there is a proof of it's validity. \\
 Completness - We used the truth-tree. If a sentence is valid, the truth tree methoid would classify it as valid. It does this by classifying it's denial as unsatisfiable. It classifies something as invalid if under all possible interpretations are invalid. If a sentence is unsatisfiable, then the tree methoid shows this by having all branches closed.
 
 If there is a complete tree with an open path, then the inital list of that tree is satisfiable. To prove this, we first prove the completness lemma: (If any complete and open path determins an interpretation in which all lines on that path are true.), then, if the tree methoid doesn't classify a sentence as unsatisfiable, then that sentence is satisfiable. If tree is finite: Finished and open path. If tree is infinite: Then we need to show that this infinite tree has an infinite path. - Apprently not difficult to show. An infinite tree, is a tree with an infinite number of lines on it. Conceptually there is two ways: There was some line that yeilded infinite new lines. (But that's not an option due to how a tree is constructed.), Else a line makes more instanciations, that need to be instanciated. You can formalize this via induction. Lets say that a line is "fit" if it heads an infinietly large family(decendents). The first line on an infinite tree has that property. IH: If the $n$th line in a infinite tree is fit, the the $n+1$ line is also "fit". This will be true due to how the trees are constructed (Each line only creates finite immediate children), so one of these makes infinite children.  Take the leftmost paths of "fits" and you have an infinite path.Returning to the completeness lemma: A complete and open path determins an interpretation on which all lines along that path are true. 1, Make a list of all the names that appear on the path in question. We assign numbers to theses names in the order they are listed. The numbers make the Domain (tentativly). (Including compound names/function symbols.). Once that is done, (2) we do a review: we check for identities, if we find one, we change our assignment, we take the smaller of the two numbers, and we let that be the assignment for the both, and remove the larger number from the domain. (3) Once that is done, we do the same with compund names.( f(a) = g(a) or whateve..). (4) Once the names have been assigend values, we assign.. shit something about predicates. -bug ben, he is feuriously writting it.- (5), we assign values to the function-symbols (they must be total). We do this by looking at the path and the functions and set them so they're true. If it's not there, we can do anything, cause it doesn't matter in the interpretation! That's how me make an interpretation. So we now have an interpretation from a tree! Show that every line along the path is true: Induction on complexity. Take the simples case (atomic sentences) and show that each atomic sentence is true along the path. Which is given, as that's how the interpretation is made. Suppose there is a line along the path that are not true in the interpretation: If there is any-such lines, there should be a shortest such line. All such lines that are the sortest, shall be called "shorty". No atomic,conjunction,disjuncts,conditonal,dinals as they are composed of atomics. Existental: If complete, it was instanciated, which means there is a shorter version of it on the path, and hence that should be the shorty, not this. Universal: Any instancation of the universal is the same in that all instanciations are shorter, so they should be false, not the Universal. The denyal of both lead to eachother, so they follow by the same method.  \\
